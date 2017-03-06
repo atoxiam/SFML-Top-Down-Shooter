@@ -1,0 +1,172 @@
+﻿  BasicStuff.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Player.h(7): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Boss1.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Boss1.h(6): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Boss1Weapon.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Boss1Weapon.h(7): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Boss2.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Boss2.h(6): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Boss2Weapon.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Boss2Weapon.h(6): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Boss3.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Boss3.h(6): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Boss3firstWeapon.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Boss3firstWeapon.h(6): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Boss3SecWeapon.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Boss3SecWeapon.h(5): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Bullet.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Bullet.h(6): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Collision.cpp
+  CoopSet.cpp
+CoopSet.cpp(6): error C2653: 'CoopSet': is not a class or namespace name
+CoopSet.cpp(7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+CoopSet.cpp(9): error C2065: 'selection': undeclared identifier
+CoopSet.cpp(9): error C2065: 'secPlayer': undeclared identifier
+CoopSet.cpp(9): error C2228: left of '.ReadSettings' must have class/struct/union
+  CoopSet.cpp(9): note: type is 'unknown-type'
+CoopSet.cpp(10): error C2065: 'bg': undeclared identifier
+CoopSet.cpp(10): error C2228: left of '.setFilePath' must have class/struct/union
+  CoopSet.cpp(10): note: type is 'unknown-type'
+CoopSet.cpp(13): error C2065: 'iosound': undeclared identifier
+CoopSet.cpp(13): error C2228: left of '.ReadSoundSettings' must have class/struct/union
+  CoopSet.cpp(13): note: type is 'unknown-type'
+CoopSet.cpp(13): error C2065: 'volume': undeclared identifier
+CoopSet.cpp(14): error C2065: 'sound': undeclared identifier
+CoopSet.cpp(14): error C2228: left of '.LoadSoundBuffer' must have class/struct/union
+  CoopSet.cpp(14): note: type is 'unknown-type'
+CoopSet.cpp(15): error C2065: 'sound': undeclared identifier
+CoopSet.cpp(15): error C2228: left of '.setBuffer' must have class/struct/union
+  CoopSet.cpp(15): note: type is 'unknown-type'
+CoopSet.cpp(15): error C2065: 'volume': undeclared identifier
+CoopSet.cpp(18): error C2065: 'on': undeclared identifier
+CoopSet.cpp(18): error C2228: left of '.setStringAndSize' must have class/struct/union
+  CoopSet.cpp(18): note: type is 'unknown-type'
+CoopSet.cpp(19): error C2065: 'off': undeclared identifier
+CoopSet.cpp(19): error C2228: left of '.setStringAndSize' must have class/struct/union
+  CoopSet.cpp(19): note: type is 'unknown-type'
+CoopSet.cpp(20): error C2065: 'info1': undeclared identifier
+CoopSet.cpp(20): error C2228: left of '.setStringAndSize' must have class/struct/union
+  CoopSet.cpp(20): note: type is 'unknown-type'
+CoopSet.cpp(21): error C2065: 'info': undeclared identifier
+CoopSet.cpp(21): error C2228: left of '.setStringAndSize' must have class/struct/union
+  CoopSet.cpp(21): note: type is 'unknown-type'
+CoopSet.cpp(23): error C2065: 'on': undeclared identifier
+CoopSet.cpp(23): error C2228: left of '.setPosition' must have class/struct/union
+  CoopSet.cpp(23): note: type is 'unknown-type'
+CoopSet.cpp(24): error C2065: 'off': undeclared identifier
+CoopSet.cpp(24): error C2228: left of '.setPosition' must have class/struct/union
+  CoopSet.cpp(24): note: type is 'unknown-type'
+CoopSet.cpp(25): error C2065: 'info1': undeclared identifier
+CoopSet.cpp(25): error C2228: left of '.setPosition' must have class/struct/union
+  CoopSet.cpp(25): note: type is 'unknown-type'
+CoopSet.cpp(26): error C2065: 'info1': undeclared identifier
+CoopSet.cpp(26): error C2228: left of '.setColor' must have class/struct/union
+  CoopSet.cpp(26): note: type is 'unknown-type'
+CoopSet.cpp(26): error C2653: 'sf': is not a class or namespace name
+CoopSet.cpp(26): error C3861: 'Color': identifier not found
+CoopSet.cpp(27): error C2065: 'info': undeclared identifier
+CoopSet.cpp(27): error C2228: left of '.setPosition' must have class/struct/union
+  CoopSet.cpp(27): note: type is 'unknown-type'
+CoopSet.cpp(28): error C2065: 'info': undeclared identifier
+CoopSet.cpp(28): error C2228: left of '.setColor' must have class/struct/union
+  CoopSet.cpp(28): note: type is 'unknown-type'
+CoopSet.cpp(28): error C2653: 'sf': is not a class or namespace name
+CoopSet.cpp(28): error C3861: 'Color': identifier not found
+CoopSet.cpp(29): warning C4508: 'CoopSet': function should return a value; 'void' return type assumed
+CoopSet.cpp(30): error C2653: 'CoopSet': is not a class or namespace name
+CoopSet.cpp(31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+CoopSet.cpp(31): error C2084: function 'int CoopSet(void)' already has a body
+  CoopSet.cpp(6): note: see previous definition of 'CoopSet'
+CoopSet.cpp(33): error C2653: 'CoopSet': is not a class or namespace name
+CoopSet.cpp(33): error C2065: 'Game': undeclared identifier
+CoopSet.cpp(33): error C2065: 'game': undeclared identifier
+CoopSet.cpp(33): error C2182: 'HandleEvents': illegal use of type 'void'
+CoopSet.cpp(34): error C2448: 'HandleEvents': function-style initializer appears to be a function definition
+CoopSet.cpp(77): error C2653: 'CoopSet': is not a class or namespace name
+CoopSet.cpp(77): error C2065: 'Game': undeclared identifier
+CoopSet.cpp(77): error C2065: 'game': undeclared identifier
+CoopSet.cpp(77): error C2182: 'Update': illegal use of type 'void'
+CoopSet.cpp(78): error C2448: 'Update': function-style initializer appears to be a function definition
+CoopSet.cpp(92): error C2653: 'CoopSet': is not a class or namespace name
+CoopSet.cpp(92): error C2065: 'Game': undeclared identifier
+CoopSet.cpp(92): error C2065: 'game': undeclared identifier
+CoopSet.cpp(92): error C2182: 'Render': illegal use of type 'void'
+CoopSet.cpp(93): error C2448: 'Render': function-style initializer appears to be a function definition
+  Cow.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Cow.h(6): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  DiffSet.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Music.h(13): fatal error C1083: Cannot open include file: 'SFML/Audio.hpp': No such file or directory
+  DoubleShot.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\DoubleShot.h(6): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Enemy.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Enemy.h(6): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  EnemyFormation.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\EnemyFormation.h(6): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Entity.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Player.h(7): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Game.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Music.h(13): fatal error C1083: Cannot open include file: 'SFML/Audio.hpp': No such file or directory
+  GraphicSet.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Music.h(13): fatal error C1083: Cannot open include file: 'SFML/Audio.hpp': No such file or directory
+  GUI.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\GUI.h(6): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Compiling...
+  HealthDrop.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\HealthDrop.h(6): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Highscore.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Highscore.h(6): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  HighscoreList.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\HighscoreList.h(6): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  HighscoreManager.cpp
+  IngameSfx.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\IngameSfx.h(6): fatal error C1083: Cannot open include file: 'SFML/Audio.hpp': No such file or directory
+  Intro.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Music.h(13): fatal error C1083: Cannot open include file: 'SFML/Audio.hpp': No such file or directory
+  IOdiff.cpp
+  IOHighscore.cpp
+  IOscreen.cpp
+  IOsmooth.cpp
+  IOsound.cpp
+  IOstuff.cpp
+  IOtwoPlayer.cpp
+  main.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Music.h(13): fatal error C1083: Cannot open include file: 'SFML/Audio.hpp': No such file or directory
+  MainMenuState.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Music.h(13): fatal error C1083: Cannot open include file: 'SFML/Audio.hpp': No such file or directory
+  Menu.cpp
+  MenuSfx.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\MenuSfx.h(6): fatal error C1083: Cannot open include file: 'SFML/Audio.hpp': No such file or directory
+  MessageHandler.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\GUI.h(6): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Music.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Music.h(13): fatal error C1083: Cannot open include file: 'SFML/Audio.hpp': No such file or directory
+  Pew.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Pew.h(6): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Compiling...
+  Player.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Player.h(7): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Player2.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Player2.h(8): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  PlayState.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Music.h(13): fatal error C1083: Cannot open include file: 'SFML/Audio.hpp': No such file or directory
+  RenderManager.cpp
+  Settings.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Music.h(13): fatal error C1083: Cannot open include file: 'SFML/Audio.hpp': No such file or directory
+  Shitbullets.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\ShitBullets.h(6): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  ShitMonkey.cpp
+  SoundSet.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Music.h(13): fatal error C1083: Cannot open include file: 'SFML/Audio.hpp': No such file or directory
+  SpaceMonkey.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\SpaceMonkey.h(6): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  SpawnManager.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Player.h(7): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  SplashState.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\Music.h(13): fatal error C1083: Cannot open include file: 'SFML/Audio.hpp': No such file or directory
+  StateManager.cpp
+  UnlockPew.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\UnlockPew.h(6): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  UpdateManager.cpp
+  WeaponManager.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\WeaponManager.h(6): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  WeaponShooter.cpp
