@@ -1,11 +1,11 @@
 
 
-#include "Boss2Weapon.h"
+#include "bossy2Weapon.h"
 
-sf::Texture Boss2Weapon::m_weaponTex;
-sf::Texture Boss2Weapon::m_healthTex;
+sf::Texture bossy2Weapon::m_weaponTex;
+sf::Texture bossy2Weapon::m_healthTex;
 
-Boss2Weapon::Boss2Weapon(){
+bossy2Weapon::bossy2Weapon(){
 	//read settings
 	IOdiff diff;
 	m_diff = diff.ReadDiffSettings();
@@ -20,7 +20,7 @@ Boss2Weapon::Boss2Weapon(){
 
 	m_speed = 0.3f;
 
-	m_weaponTex.loadFromFile("graphics/enemies/boss2weapon.png");
+	m_weaponTex.loadFromFile("graphics/enemies/bossy2weapon.png");
 	m_weaponTex.setSmooth(smooth.ReadSmoothSettings());
 	sprite.setTexture(m_weaponTex);
 	sprite.setOrigin(m_weaponTex.getSize().x / 2.0f, m_weaponTex.getSize().y / 2.0f);
@@ -29,7 +29,7 @@ Boss2Weapon::Boss2Weapon(){
 	initHealthBar();
 }
 
-void Boss2Weapon::Update(sf::RenderWindow &window, float &elapsedTime, Player &pPlayer){
+void bossy2Weapon::Update(sf::RenderWindow &window, float &elapsedTime, Player &pPlayer){
 	if (m_active)	{
 		m_xPos = sprite.getPosition().x;
 		m_yPos = sprite.getPosition().y;
@@ -60,20 +60,20 @@ void Boss2Weapon::Update(sf::RenderWindow &window, float &elapsedTime, Player &p
 	}
 }
 
-void Boss2Weapon::Render(sf::RenderWindow &window)
+void bossy2Weapon::Render(sf::RenderWindow &window)
 {
 	if (m_active){
 		//check for mouseOver
 		if (sprite.getGlobalBounds().intersects(sf::Rect<float>((float)sf::Mouse::getPosition(window).x, (float)sf::Mouse::getPosition(window).y + 1.0f, 1.0f, 1.0f))){
 			if (!m_hasTargetTexture){
-				m_weaponTex.loadFromFile("graphics/enemies/boss2weapon_target.png");
+				m_weaponTex.loadFromFile("graphics/enemies/bossy2weapon_target.png");
 				sprite.setTexture(m_weaponTex);
 				m_hasTargetTexture = true;
 			}
 		}
 		else{
 			if (m_hasTargetTexture){
-				m_weaponTex.loadFromFile("graphics/enemies/boss2weapon.png");
+				m_weaponTex.loadFromFile("graphics/enemies/bossy2weapon.png");
 				sprite.setTexture(m_weaponTex);
 				m_hasTargetTexture = false;
 			}
@@ -84,12 +84,12 @@ void Boss2Weapon::Render(sf::RenderWindow &window)
 	}
 }
 
-void Boss2Weapon::setPosition(float x, float y){
+void bossy2Weapon::setPosition(float x, float y){
 	sprite.setPosition(x, y);
 }
 
 //Healthbar init
-void Boss2Weapon::initHealthBar(){
+void bossy2Weapon::initHealthBar(){
 
 	//load Texture
 	if (!m_healthTex.loadFromFile("graphics/enemies/health.png")){
@@ -107,7 +107,7 @@ void Boss2Weapon::initHealthBar(){
 }
 
 //Healthbar Update
-void Boss2Weapon::UpdateHealthBar(){
+void bossy2Weapon::UpdateHealthBar(){
 
 	//first set the Position of the Shape
 	m_healthbar.setPosition(m_xPos, (m_yPos - 10.0f - sprite.getLocalBounds().height / 2)); ///< see how it behaves with origin
@@ -123,6 +123,6 @@ void Boss2Weapon::UpdateHealthBar(){
 }
 
 //sets the entity active or inactive
-void Boss2Weapon::setActiveBool(bool active){
+void bossy2Weapon::setActiveBool(bool active){
 	m_active = active;
 }

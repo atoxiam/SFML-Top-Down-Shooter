@@ -1,15 +1,15 @@
 
 
-#ifndef BOSS1WEAPON_H
-#define BOSS1WEAPON_H
+#ifndef bossy1WEAPON_H
+#define bossy1WEAPON_H
 
 
 #include <SFML/Graphics.hpp>
 #include "IOstuff.h"
 
-class Boss1Weapon{
+class bossy1Weapon{
 public:
-	Boss1Weapon();
+	bossy1Weapon();
 	void Update(sf::RenderWindow &window, float &elapsedTime);
 	void Render(sf::RenderWindow &window);
 

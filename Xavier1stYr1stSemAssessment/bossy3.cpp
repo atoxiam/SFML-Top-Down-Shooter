@@ -1,13 +1,13 @@
 
 
-#include "Boss3.h"
+#include "bossy3.h"
 
-sf::Texture Boss3::m_enemyTex;
-sf::Texture Boss3::m_headSpawnerTex;
-sf::Texture Boss3::m_camelSpawnerTex;
-sf::Texture Boss3::m_healthTex;
+sf::Texture bossy3::m_enemyTex;
+sf::Texture bossy3::m_headSpawnerTex;
+sf::Texture bossy3::m_camelSpawnerTex;
+sf::Texture bossy3::m_healthTex;
 
-Boss3::Boss3(){
+bossy3::bossy3(){
 	//get Settings
 	IOdiff   diff;
 	IOsmooth smooth;
@@ -62,7 +62,7 @@ Boss3::Boss3(){
 	initHealthBar();
 }
 
-void Boss3::Update(sf::RenderWindow &window, float elapsedTime){
+void bossy3::Update(sf::RenderWindow &window, float elapsedTime){
 	if (m_active) {
 
 		m_elapsedTime = elapsedTime;
@@ -87,7 +87,7 @@ void Boss3::Update(sf::RenderWindow &window, float elapsedTime){
 	}
 }
 
-void Boss3::Render(sf::RenderWindow &window)
+void bossy3::Render(sf::RenderWindow &window)
 {
 	if (m_active){
 		if (m_camelMActive)
@@ -109,28 +109,28 @@ void Boss3::Render(sf::RenderWindow &window)
 }
 
 //setter
-void Boss3::setBossPosition(float x, float y){
+void bossy3::setBossPosition(float x, float y){
 	sprite.setPosition(x, y);
 }
 
-void Boss3::setHead1Position(float x, float y){
+void bossy3::setHead1Position(float x, float y){
 	headSprite1.setPosition(x, y);
 }
 
-void Boss3::setHead2Position(float x, float y){
+void bossy3::setHead2Position(float x, float y){
 	headSprite2.setPosition(x, y);
 }
 
-void Boss3::setcamelMPosition(float x, float y){
+void bossy3::setcamelMPosition(float x, float y){
 	camelSprite.setPosition(x, y);
 }
 
-void Boss3::reduceHealth(int pDamage){
+void bossy3::reduceHealth(int pDamage){
 	m_health -= pDamage;
 }
 
 //Move left and right
-void Boss3::stateMovementLR(sf::RenderWindow& window){
+void bossy3::stateMovementLR(sf::RenderWindow& window){
 	//Move left
 	if (m_moveLeft && m_xPos > -100){
 		m_xPos -= m_speed * m_elapsedTime;
@@ -153,7 +153,7 @@ void Boss3::stateMovementLR(sf::RenderWindow& window){
 }
 
 //handles movement of third state
-void Boss3::stateMovement3(sf::RenderWindow& window){
+void bossy3::stateMovement3(sf::RenderWindow& window){
 	//move fast to the start position
 	if (!m_state3Pos){
 		if (m_xPos < window.getSize().x / 2){
@@ -235,7 +235,7 @@ void Boss3::stateMovement3(sf::RenderWindow& window){
 }
 
 //handles movement of fourth state
-void Boss3::stateMovement4(sf::RenderWindow& window){
+void bossy3::stateMovement4(sf::RenderWindow& window){
 	//DIE Motherf***er
 	if (!m_topAfterDeath){
 		if (m_yPos > -600)
@@ -261,7 +261,7 @@ void Boss3::stateMovement4(sf::RenderWindow& window){
 }
 
 //inits state 0
-void Boss3::stateInit0(){
+void bossy3::stateInit0(){
 	sprite.setColor(m_transColor);
 	if (m_yPos < 0){
 		m_yPos += m_speed * m_elapsedTime / 7;
@@ -281,7 +281,7 @@ void Boss3::stateInit0(){
 }
 
 //inits state 1
-void Boss3::stateInit1(){
+void bossy3::stateInit1(){
 	//activate heads
 	if (!m_head1Active || !m_head2Active){
 		m_head1Active = true;
@@ -306,7 +306,7 @@ void Boss3::stateInit1(){
 }
 
 //inits state 1.5
-void Boss3::stateInit1B(){
+void bossy3::stateInit1B(){
 	m_shootHeads1 = true;
 	m_shootHeads2 = true;
 
@@ -331,7 +331,7 @@ void Boss3::stateInit1B(){
 }
 
 //inits state 2
-void Boss3::stateInit2(){
+void bossy3::stateInit2(){
 	if (m_cmy <= m_yPos + 200){
 		camelSprite.setPosition(m_xPos + 100, m_cmy += m_speed * m_elapsedTime / 4);
 	}
@@ -346,7 +346,7 @@ void Boss3::stateInit2(){
 }
 
 //inits state 2.5
-void Boss3::stateInit2B(){
+void bossy3::stateInit2B(){
 	camelSprite.setPosition(sprite.getPosition().x + 100, m_cmy);
 
 	if (m_cmy <= m_yPos + 150){
@@ -358,7 +358,7 @@ void Boss3::stateInit2B(){
 }
 
 //inits state 3
-void Boss3::stateInit3(){
+void bossy3::stateInit3(){
 	if (m_yPos <= 175 && sprite.getOrigin().x != m_enemyTex.getSize().x / 2){
 		m_yPos += m_speed * m_elapsedTime / 2;
 	}
@@ -373,7 +373,7 @@ void Boss3::stateInit3(){
 }
 
 //Healthbar init
-void Boss3::initHealthBar(){
+void bossy3::initHealthBar(){
 
 	//load Texture
 	if (!m_healthTex.loadFromFile("graphics/enemies/health.png")){
@@ -391,7 +391,7 @@ void Boss3::initHealthBar(){
 }
 
 //Healthbar Update
-void Boss3::UpdateHealthBar(){
+void bossy3::UpdateHealthBar(){
 
 	//first set the Position of the Shape
 	m_healthbar.setPosition(m_xPos, (m_yPos - 10.0f - sprite.getLocalBounds().height / 2)); ///< see how it behaves with origin
@@ -406,7 +406,7 @@ void Boss3::UpdateHealthBar(){
 	m_healthbar.setTextureRect(sf::IntRect((int)showAmount, 0, m_healthTex.getSize().x, m_healthTex.getSize().y));
 }
 
-void Boss3::stateMovementHandler(sf::RenderWindow& window){
+void bossy3::stateMovementHandler(sf::RenderWindow& window){
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	//+++++++++++++++++++++++++++++++++++-MOVEMENT-+++++++++++++++++++++++++++++++++++++++++
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -430,7 +430,7 @@ void Boss3::stateMovementHandler(sf::RenderWindow& window){
 	}
 }
 
-void Boss3::stateInitHandler(){
+void bossy3::stateInitHandler(){
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	//++++++++++++++++++++++++++++++++-INITIALIZATION-++++++++++++++++++++++++++++++++++++++
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -468,6 +468,6 @@ void Boss3::stateInitHandler(){
 }
 
 //sets the entity active or inactive
-void Boss3::setActiveBool(bool active){
+void bossy3::setActiveBool(bool active){
 	m_active = active;
 }

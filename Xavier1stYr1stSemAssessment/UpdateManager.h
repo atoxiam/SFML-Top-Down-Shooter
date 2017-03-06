@@ -31,7 +31,7 @@ namespace UpdateManager{
 	}
 
 	template <class C, class P1>
-	void Boss2WeaponUpdate(std::vector<C> &vector,sf::RenderWindow &window, float &elapsedTime, P1 &player1){
+	void bossy2WeaponUpdate(std::vector<C> &vector,sf::RenderWindow &window, float &elapsedTime, P1 &player1){
 		for (unsigned int i = 0; i < vector.size(); i++)		{
 			if (vector[i].getActiveBool())
 				vector[i].Update(window, elapsedTime, player1);

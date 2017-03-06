@@ -20,7 +20,7 @@ Bullet::Bullet(float playerPosX, float playerPosY, sf::RenderWindow& window){
 	_direction.y = sf::Mouse::getPosition(window).y - playerPosY;
 	_direction = normalize(_direction);
 
-	//do textureshit
+	//do textureyes
 	bulletTex.loadFromFile("graphics/weapons/bullet.png");
 	bulletTex.setSmooth(false);
 	sprite.setTexture(bulletTex);

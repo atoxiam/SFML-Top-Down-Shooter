@@ -1,10 +1,10 @@
 
 
-#include "Boss1Weapon.h"
+#include "bossy1Weapon.h"
 
-sf::Texture Boss1Weapon::weaponTex;
+sf::Texture bossy1Weapon::weaponTex;
 
-Boss1Weapon::Boss1Weapon(){
+bossy1Weapon::bossy1Weapon(){
 	//get settings
 	m_dmg = 10 * m_diff.ReadDiffSettings();
 	IOsmooth smooth;
@@ -21,7 +21,7 @@ Boss1Weapon::Boss1Weapon(){
 	sprite.setOrigin(23.5, 12);
 }
 
-void Boss1Weapon::Update(sf::RenderWindow &window, float &elapsedTime){
+void bossy1Weapon::Update(sf::RenderWindow &window, float &elapsedTime){
 	if (m_active){
 		float x = sprite.getPosition().x;
 		float y = sprite.getPosition().y;
@@ -36,16 +36,16 @@ void Boss1Weapon::Update(sf::RenderWindow &window, float &elapsedTime){
 	}
 }
 
-void Boss1Weapon::Render(sf::RenderWindow &window){
+void bossy1Weapon::Render(sf::RenderWindow &window){
 	if (m_active)
 		window.draw(sprite);
 }
 
-void Boss1Weapon::setPosition(float x, float y){
+void bossy1Weapon::setPosition(float x, float y){
 	sprite.setPosition(x, y);
 }
 
 //sets the entity active or inactive
-void Boss1Weapon::setActiveBool(bool active){
+void bossy1Weapon::setActiveBool(bool active){
 	m_active = active;
 }

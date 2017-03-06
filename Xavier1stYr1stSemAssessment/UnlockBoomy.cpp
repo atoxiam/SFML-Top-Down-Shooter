@@ -1,10 +1,10 @@
-//UnlockPew.cpp
+//UnlockBoomy.cpp
 
-#include "UnlockPew.h"
+#include "UnlockBoomy.h"
 
-sf::Texture UnlockPew::pewDropTex;
+sf::Texture UnlockBoomy::pewDropTex;
 
-UnlockPew::UnlockPew(){
+UnlockBoomy::UnlockBoomy(){
 	speed = 0.1f;
 	m_active = true;
 
@@ -16,7 +16,7 @@ UnlockPew::UnlockPew(){
 	pewDropSprite.setPosition(400, 50);
 }
 
-void UnlockPew::Update(sf::RenderWindow &window, float elapsedTime){
+void UnlockBoomy::Update(sf::RenderWindow &window, float elapsedTime){
 	if (m_active){
 		float x = pewDropSprite.getPosition().x;
 		float y = pewDropSprite.getPosition().y;
@@ -33,16 +33,16 @@ void UnlockPew::Update(sf::RenderWindow &window, float elapsedTime){
 	}
 }
 
-void UnlockPew::Render(sf::RenderWindow &window){
+void UnlockBoomy::Render(sf::RenderWindow &window){
 	if (m_active)
 		window.draw(pewDropSprite);
 }
 
-void UnlockPew::SetPosition(float x, float y){
+void UnlockBoomy::SetPosition(float x, float y){
 	pewDropSprite.setPosition(x, y);
 }
 
 //sets the entity active or inactive
-void UnlockPew::setActiveBool(bool active){
+void UnlockBoomy::setActiveBool(bool active){
 	m_active = active;
 }

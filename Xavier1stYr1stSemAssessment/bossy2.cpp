@@ -1,11 +1,13 @@
 
 
-#include "Boss1.h"
+#include "bossy2.h"
+#include <cmath>
+#define PI 3.14159265
 
-sf::Texture Boss1::m_enemyTex;
-sf::Texture Boss1::m_healthTex;
+sf::Texture bossy2::m_enemyTex;
+sf::Texture bossy2::m_healthTex;
 
-Boss1::Boss1(){
+bossy2::bossy2(){
 	//get settings
 	IOdiff diff;
 	IOsmooth smooth;
@@ -13,78 +15,109 @@ Boss1::Boss1(){
 	//init stuff
 	m_hasTargetTexture = false;
 	m_active = true;
+	m_fadeIn = false;
 	m_moveLeft = true;
 
-	m_speed = 0.4f;
-	m_health = 50 * diff.ReadDiffSettings();
+	m_speed = 0.5f;
+	m_health = 200 * diff.ReadDiffSettings();
 	m_maxHealth = m_health;
 
-	m_enemyTex.loadFromFile("graphics/enemies/robbe.png");
+	m_sinValue = 0.0f;
+	m_debauch = 30;
+
+	m_enemyTex.loadFromFile("graphics/enemies/bossy2.png");
 	m_enemyTex.setSmooth(smooth.ReadSmoothSettings());
 	sprite.setTexture(m_enemyTex);
 	sprite.setOrigin(m_enemyTex.getSize().x / 2.0f, m_enemyTex.getSize().y / 2.0f);
-	sprite.setPosition(400.0f, -300.0f);
 
 	//initialize Healthbar
 	initHealthBar();
 }
-void Boss1::Update(sf::RenderWindow &window, float elapsedTime){
+
+void bossy2::Update(sf::RenderWindow &window, float elapsedTime){
 
 	if (m_active){
-
 		m_xPos = sprite.getPosition().x;
 		m_yPos = sprite.getPosition().y;
 
-		//fade in
-		if (m_yPos <= 120.0f){
-			m_yPos += (m_speed * elapsedTime) / 3.0f;
+		m_sinValue += elapsedTime;
+
+		//slow fade in
+		if (!m_fadeIn){
+			m_yPos += m_speed * elapsedTime / 4;
 		}
 			
-		if (m_yPos <= 200.0f){
-			m_yPos += m_speed * elapsedTime;
+		//if enemy is completely on screen
+		if (m_yPos >= 175){
+			m_fadeIn = true;
 		}
-		
-		//move left
-		if (m_moveLeft && m_xPos > 75.0f){
+
+		//handle X movement
+		if (m_moveLeft && m_xPos > 75){
 			m_xPos -= m_speed * elapsedTime;
 		}
+	
 		else{
 			m_moveLeft = false;
 		}
-
-		//move right
-		if (!m_moveLeft && m_xPos < window.getSize().x - 75.0f){
+		
+		if (!m_moveLeft && m_xPos < window.getSize().x - 75){
 			m_xPos += m_speed * elapsedTime;
 		}
-		else{
+		
+		else {
 			m_moveLeft = true;
 		}
-			
-	//Update Healthbar
-	UpdateHealthBar();
 
-	sprite.setPosition(m_xPos, m_yPos);
+		//handle Y movement
+		if (m_fadeIn){
+			m_yPos = 175 + (float)std::sin(m_sinValue * PI / 180) * m_debauch;
+			
+			if (m_sinValue > 360)
+				m_sinValue = 0;
+		}
+
+		//Update Healthbar
+		UpdateHealthBar();
+
+		//set new coordinates
+		sprite.setPosition(m_xPos, m_yPos);
 	}
 }
 
-
-void Boss1::Render(sf::RenderWindow &window){
+void bossy2::Render(sf::RenderWindow &window){
 	if (m_active){
+		//check for mouseOver
+		if (sprite.getGlobalBounds().intersects(sf::Rect<float>((float)sf::Mouse::getPosition(window).x, (float)sf::Mouse::getPosition(window).y + 1.0f, 1.0f, 1.0f))){
+			if (!m_hasTargetTexture){
+				m_enemyTex.loadFromFile("graphics/enemies/bossy2_target.png");
+				sprite.setTexture(m_enemyTex);
+				m_hasTargetTexture = true;
+			}
+		}
+		else{
+			if (m_hasTargetTexture){
+				m_enemyTex.loadFromFile("graphics/enemies/bossy2.png");
+				sprite.setTexture(m_enemyTex);
+				m_hasTargetTexture = false;
+			}
+		}
+
 		window.draw(sprite);
 		window.draw(m_healthbar);
 	}
 }
 
-void Boss1::SetPosition(float x, float y){
+void bossy2::setPosition(float x, float y){
 	sprite.setPosition(x, y);
 }
 
-void Boss1::reduceHealth(int pDamage){
+void bossy2::reduceHealth(int pDamage){
 	m_health -= pDamage;
 }
 
 //Healthbar init
-void Boss1::initHealthBar(){
+void bossy2::initHealthBar(){
 
 	//load Texture
 	if (!m_healthTex.loadFromFile("graphics/enemies/health.png")){
@@ -102,7 +135,7 @@ void Boss1::initHealthBar(){
 }
 
 //Healthbar Update
-void Boss1::UpdateHealthBar(){
+void bossy2::UpdateHealthBar(){
 
 	//first set the Position of the Shape
 	m_healthbar.setPosition(m_xPos, (m_yPos - 10.0f - sprite.getLocalBounds().height / 2)); ///< see how it behaves with origin
@@ -118,6 +151,6 @@ void Boss1::UpdateHealthBar(){
 }
 
 //sets the entity active or inactive
-void Boss1::setActiveBool(bool active){
+void bossy2::setActiveBool(bool active){
 	m_active = active;
 }

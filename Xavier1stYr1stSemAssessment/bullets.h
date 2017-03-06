@@ -1,7 +1,7 @@
 
 
-#ifndef _SHIT_H
-#define _SHIT_H
+#ifndef _yes_H
+#define _yes_H
 
 #include <SFML/Graphics.hpp>
 #include "doggo.h"
@@ -43,7 +43,7 @@ private:
 
 	sf::Vector2f pPosition;
 
-	static sf::Texture m_shitTex;
+	static sf::Texture m_yesTex;
 	static sf::Texture m_healthTex;
 	sf::RectangleShape m_healthbar;
 

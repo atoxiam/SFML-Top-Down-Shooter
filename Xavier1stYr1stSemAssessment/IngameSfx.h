@@ -22,11 +22,11 @@ private:
 	sf::SoundBuffer playerCollisionBuffer;
 	sf::SoundBuffer playerDeathBuffer;
 	sf::SoundBuffer monkeyFartBuffer;
-	sf::SoundBuffer pewBuffer;
-	sf::SoundBuffer boss1HitBuffer;
+	sf::SoundBuffer boomyBuffer;
+	sf::SoundBuffer bossy1HitBuffer;
 	sf::SoundBuffer camelBuffer;
-	sf::SoundBuffer boss3spawn;
-	sf::SoundBuffer boss3death;
+	sf::SoundBuffer bossy3spawn;
+	sf::SoundBuffer bossy3death;
 
 	sf::Sound bossDeathSound;
 	sf::Sound bulletShotSound;
@@ -36,10 +36,10 @@ private:
 	sf::Sound playerDeathSound;
 	sf::Sound monkeyFartSound;
 	sf::Sound pewSound;
-	sf::Sound boss1HitSound;
+	sf::Sound bossy1HitSound;
 	sf::Sound camelSound;
-	sf::Sound boss3spawnSound;
-	sf::Sound boss3deathSound;
+	sf::Sound bossy3spawnSound;
+	sf::Sound bossy3deathSound;
 };
 
 #endif

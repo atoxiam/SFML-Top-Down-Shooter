@@ -1,15 +1,15 @@
 
 
-#ifndef BOSS2_H
-#define BOSS2_H
+#ifndef bossy2_H
+#define bossy2_H
 
 #include <SFML/Graphics.hpp>
 #include <math.h>
 #include "IOstuff.h"
 
-class Boss2{
+class bossy2{
 public:
-	Boss2();
+	bossy2();
 	void Update(sf::RenderWindow &window, float elapsedTime);
 	void Render(sf::RenderWindow &window);
 

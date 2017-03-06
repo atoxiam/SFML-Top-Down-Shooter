@@ -4,9 +4,9 @@
 
 #include <SFML/Graphics.hpp>
 
-class UnlockPew{
+class UnlockBoomy{
 public:
-	UnlockPew();
+	UnlockBoomy();
 	void Update(sf::RenderWindow &window, float elapsedTime);
 	void Render(sf::RenderWindow &window);
 	void SetPosition(float x, float y);

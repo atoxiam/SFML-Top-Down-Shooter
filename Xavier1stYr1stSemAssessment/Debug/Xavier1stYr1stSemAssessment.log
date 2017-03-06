@@ -1,2 +1,33 @@
-﻿  Xavier1stYr1stSemAssessment.vcxproj -> F:\Xavier1stYr1stSemAssessment\Debug\Xavier1stYr1stSemAssessment.exe
-  Xavier1stYr1stSemAssessment.vcxproj -> F:\Xavier1stYr1stSemAssessment\Debug\Xavier1stYr1stSemAssessment.pdb (Full PDB)
+﻿  MenuState.cpp
+  Game.cpp
+  Generating Code...
+  Compiling...
+  SplashState.cpp
+  SoundSet.cpp
+  Settings.cpp
+  PlayState.cpp
+  main.cpp
+  Intro.cpp
+  HighscoreList.cpp
+  Highscore.cpp
+  Graphics.cpp
+  DiffSet.cpp
+  Generating Code...
+LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/FORCE' specification
+BasicStuff.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+IOstuff.obj : warning LNK4006: "public: int __thiscall IOdiff::ReadDiffSettings(void)" (?ReadDiffSettings@IOdiff@@QAEHXZ) already defined in IOdiff.obj; second definition ignored
+IOstuff.obj : warning LNK4006: "public: bool __thiscall IOsmooth::ReadSmoothSettings(void)" (?ReadSmoothSettings@IOsmooth@@QAE_NXZ) already defined in IOsmooth.obj; second definition ignored
+IOstuff.obj : warning LNK4006: "public: void __thiscall IOsound::ReadSoundSettings(int &)" (?ReadSoundSettings@IOsound@@QAEXAAH@Z) already defined in IOsound.obj; second definition ignored
+IOstuff.obj : warning LNK4006: "public: void __thiscall IOdiff::WriteDiffSettings(int &)" (?WriteDiffSettings@IOdiff@@QAEXAAH@Z) already defined in IOdiff.obj; second definition ignored
+IOstuff.obj : warning LNK4006: "public: void __thiscall IOHighscore::WriteHighscore(class HighscoreManager &)" (?WriteHighscore@IOHighscore@@QAEXAAVHighscoreManager@@@Z) already defined in IOHighscore.obj; second definition ignored
+IOstuff.obj : warning LNK4006: "public: void __thiscall IOsmooth::WriteSmoothSettings(bool &)" (?WriteSmoothSettings@IOsmooth@@QAEXAA_N@Z) already defined in IOsmooth.obj; second definition ignored
+IOstuff.obj : warning LNK4006: "public: void __thiscall IOsound::WriteSoundSettings(int &)" (?WriteSoundSettings@IOsound@@QAEXAAH@Z) already defined in IOsound.obj; second definition ignored
+IOstuff.obj : warning LNK4006: "private: void __thiscall IOHighscore::closeWrite(void)" (?closeWrite@IOHighscore@@AAEXXZ) already defined in IOHighscore.obj; second definition ignored
+IOstuff.obj : warning LNK4006: "public: bool __thiscall IOscreen::getScreenSettings(void)" (?getScreenSettings@IOscreen@@QAE_NXZ) already defined in IOscreen.obj; second definition ignored
+IOstuff.obj : warning LNK4006: "private: void __thiscall IOHighscore::openWrite(void)" (?openWrite@IOHighscore@@AAEXXZ) already defined in IOHighscore.obj; second definition ignored
+IOstuff.obj : warning LNK4006: "public: void __thiscall IOscreen::setScreenSettings(bool &)" (?setScreenSettings@IOscreen@@QAEXAA_N@Z) already defined in IOscreen.obj; second definition ignored
+IOtwoPlayer.obj : warning LNK4006: "public: bool __thiscall IOtwoPlayer::ReadSettings(void)" (?ReadSettings@IOtwoPlayer@@QAE_NXZ) already defined in IOstuff.obj; second definition ignored
+IOtwoPlayer.obj : warning LNK4006: "public: void __thiscall IOtwoPlayer::WriteSettings(bool &)" (?WriteSettings@IOtwoPlayer@@QAEXAA_N@Z) already defined in IOstuff.obj; second definition ignored
+F:\AIE-Assessment-III-1st-Yr-Top-Down-Shooter-master\AIE-Assessment-III-1st-Yr-Top-Down-Shooter-master\Debug\Xavier1stYr1stSemAssessment.exe : warning LNK4088: image being generated due to /FORCE option; image may not run
+  Xavier1stYr1stSemAssessment.vcxproj -> F:\AIE-Assessment-III-1st-Yr-Top-Down-Shooter-master\AIE-Assessment-III-1st-Yr-Top-Down-Shooter-master\Debug\Xavier1stYr1stSemAssessment.exe
+  Xavier1stYr1stSemAssessment.vcxproj -> F:\AIE-Assessment-III-1st-Yr-Top-Down-Shooter-master\AIE-Assessment-III-1st-Yr-Top-Down-Shooter-master\Debug\Xavier1stYr1stSemAssessment.pdb (Full PDB)

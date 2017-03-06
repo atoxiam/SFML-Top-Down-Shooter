@@ -2,7 +2,7 @@
 
 #include "bullets.h"
 
-sf::Texture bullets::m_shitTex;
+sf::Texture bullets::m_yesTex;
 sf::Texture bullets::m_healthTex;
 
 bullets::bullets(){
@@ -18,10 +18,10 @@ bullets::bullets(){
 
 	m_speed = 0.2f;
 
-	m_shitTex.loadFromFile("graphics/enemies/shit.png");
-	m_shitTex.setSmooth(smooth.ReadSmoothSettings());
-	sprite.setTexture(m_shitTex);
-	sprite.setOrigin(m_shitTex.getSize().x / 2.0f, m_shitTex.getSize().y / 2.0f);
+	m_yesTex.loadFromFile("graphics/enemies/yes.png");
+	m_yesTex.setSmooth(smooth.ReadSmoothSettings());
+	sprite.setTexture(m_yesTex);
+	sprite.setOrigin(m_yesTex.getSize().x / 2.0f, m_yesTex.getSize().y / 2.0f);
 }
 
 void bullets::Update(sf::RenderWindow &window, float elapsedTime){
@@ -48,15 +48,15 @@ void bullets::Render(sf::RenderWindow &window){
 		//check for mouseOver
 		if (sprite.getGlobalBounds().intersects(sf::Rect<float>((float)sf::Mouse::getPosition(window).x, (float)sf::Mouse::getPosition(window).y + 1.0f, 1.0f, 1.0f))){
 			if (!m_hasTargetTexture){
-				m_shitTex.loadFromFile("graphics/enemies/shit_target.png");
-				sprite.setTexture(m_shitTex);
+				m_yesTex.loadFromFile("graphics/enemies/yes_target.png");
+				sprite.setTexture(m_yesTex);
 				m_hasTargetTexture = true;
 			}
 		}
 		else{
 			if (m_hasTargetTexture){
-				m_shitTex.loadFromFile("graphics/enemies/shit.png");
-				sprite.setTexture(m_shitTex);
+				m_yesTex.loadFromFile("graphics/enemies/yes.png");
+				sprite.setTexture(m_yesTex);
 				m_hasTargetTexture = false;
 			}
 		}

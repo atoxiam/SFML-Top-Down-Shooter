@@ -1,11 +1,11 @@
 
 
-#include "Boss3firstWeapon.h"
+#include "bossy3firstWeapon.h"
 
-sf::Texture Boss3firstWeapon::m_weaponTex;
-sf::Texture Boss3firstWeapon::m_healthTex;
+sf::Texture bossy3firstWeapon::m_weaponTex;
+sf::Texture bossy3firstWeapon::m_healthTex;
 
-Boss3firstWeapon::Boss3firstWeapon(){
+bossy3firstWeapon::bossy3firstWeapon(){
 	//read settings
 	IOdiff diff;
 	m_diff = diff.ReadDiffSettings();
@@ -29,7 +29,7 @@ Boss3firstWeapon::Boss3firstWeapon(){
 	initHealthBar();
 }
 
-void Boss3firstWeapon::Update(sf::RenderWindow &window, float &elapsedTime){
+void bossy3firstWeapon::Update(sf::RenderWindow &window, float &elapsedTime){
 	if (m_active)	{
 		m_xPos = sprite.getPosition().x;
 		m_yPos = sprite.getPosition().y;
@@ -50,7 +50,7 @@ void Boss3firstWeapon::Update(sf::RenderWindow &window, float &elapsedTime){
 	}
 }
 
-void Boss3firstWeapon::Render(sf::RenderWindow &window){
+void bossy3firstWeapon::Render(sf::RenderWindow &window){
 	if (m_active){
 
 		//check for mouseOver
@@ -74,12 +74,12 @@ void Boss3firstWeapon::Render(sf::RenderWindow &window){
 	}
 }
 
-void Boss3firstWeapon::setPosition(float x, float y){
+void bossy3firstWeapon::setPosition(float x, float y){
 	sprite.setPosition(x, y);
 }
 
 //Healthbar init
-void Boss3firstWeapon::initHealthBar(){
+void bossy3firstWeapon::initHealthBar(){
 
 	//load Texture
 	if (!m_healthTex.loadFromFile("graphics/enemies/health.png")){
@@ -97,7 +97,7 @@ void Boss3firstWeapon::initHealthBar(){
 }
 
 //Healthbar Update
-void Boss3firstWeapon::UpdateHealthBar(){
+void bossy3firstWeapon::UpdateHealthBar(){
 
 	//first set the Position of the Shape
 	m_healthbar.setPosition(m_xPos, (m_yPos - 10.0f - sprite.getLocalBounds().height / 2)); ///< see how it behaves with origin
@@ -113,6 +113,6 @@ void Boss3firstWeapon::UpdateHealthBar(){
 }
 
 //sets the entity active or inactive
-void Boss3firstWeapon::setActiveBool(bool active){
+void bossy3firstWeapon::setActiveBool(bool active){
 	m_active = active;
 }

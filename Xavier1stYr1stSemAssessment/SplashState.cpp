@@ -50,8 +50,8 @@ void SplashState::Render(Game &game){
 	if (!m_sfmlShown){
 		game.window.draw(m_sfmlSprite);
 	}
-	if (!m_shitSoftShown){
-		game.window.draw(m_shitSoftSprite);
+	if (!m_yesSoftShown){
+		game.window.draw(m_yesSoftSprite);
 	}
 	
 	if (!m_CreditsShown){
@@ -129,17 +129,17 @@ void SplashState::updateCredits(){
 		m_sfmlShown = true;
 	}
 
-	//Then ShitSoft
-	if (m_alphaShitSoft <= 255 && !m_shitSoftShown && m_sfmlShown){
-		m_alphaShitSoft += (int)m_elapsedTime / 5;
-		m_shitSoftSprite.setColor(sf::Color(255, 255, 255, m_alphaShitSoft));
+	//Then yesSoft
+	if (m_alphayesSoft <= 255 && !m_yesSoftShown && m_sfmlShown){
+		m_alphayesSoft += (int)m_elapsedTime / 5;
+		m_yesSoftSprite.setColor(sf::Color(255, 255, 255, m_alphayesSoft));
 	}
-	if (m_alphaShitSoft >= 255 && !m_shitSoftShown){
-		m_shitSoftShown = true;
+	if (m_alphayesSoft >= 255 && !m_yesSoftShown){
+		m_yesSoftShown = true;
 	}
 
 	//Then Credits
-	if (m_alphaCredits <= 255 && !m_CreditsShown && m_shitSoftShown && m_sfmlShown){
+	if (m_alphaCredits <= 255 && !m_CreditsShown && m_yesSoftShown && m_sfmlShown){
 		m_alphaCredits += (int)m_elapsedTime / 7;
 		m_credits.setColor(sf::Color(255, 255, 255, m_alphaCredits));
 	}
@@ -148,7 +148,7 @@ void SplashState::updateCredits(){
 	}
 
 	//After everything has been shown - init fadeout
-	if (m_sfmlShown && m_shitSoftShown && m_CreditsShown){
+	if (m_sfmlShown && m_yesSoftShown && m_CreditsShown){
 		m_startFading = true;
 	}
 }

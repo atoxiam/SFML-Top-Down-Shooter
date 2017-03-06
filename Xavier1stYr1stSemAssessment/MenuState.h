@@ -1,16 +1,16 @@
 
 
-#ifndef MAINMENUSTATE_H
-#define MAINMENUSTATE_H
+#ifndef MenuState_H
+#define MenuState_H
 
 #include "Game.h"
 #include "MenuSfx.h"
 #include "IOstuff.h"
 
-class MainMenuState : public GameState{
+class MenuState : public GameState{
 public:
-	MainMenuState();
-	~MainMenuState();
+	MenuState();
+	~MenuState();
 	void HandleEvents(Game &game);
 	void Update(Game &game);
 	void Render(Game &game);

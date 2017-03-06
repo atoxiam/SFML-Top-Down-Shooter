@@ -1,12 +1,12 @@
 
 
-#include "Boss3SecWeapon.h"
+#include "bossy3SecWeapon.h"
 
 
-sf::Texture Boss3SecWeapon::m_weaponTex;
-sf::Texture Boss3SecWeapon::m_healthTex;
+sf::Texture bossy3SecWeapon::m_weaponTex;
+sf::Texture bossy3SecWeapon::m_healthTex;
 
-Boss3SecWeapon::Boss3SecWeapon(){
+bossy3SecWeapon::bossy3SecWeapon(){
 	
 	//Read settings
 	IOdiff diff;
@@ -30,7 +30,7 @@ Boss3SecWeapon::Boss3SecWeapon(){
 	initHealthBar();
 }
 
-void Boss3SecWeapon::Update(sf::RenderWindow &window, float &elapsedTime){
+void bossy3SecWeapon::Update(sf::RenderWindow &window, float &elapsedTime){
 	if (m_active){
 		m_xPos = sprite.getPosition().x;
 		m_yPos = sprite.getPosition().y;
@@ -53,7 +53,7 @@ void Boss3SecWeapon::Update(sf::RenderWindow &window, float &elapsedTime){
 	}
 }
 
-void Boss3SecWeapon::Render(sf::RenderWindow &window){
+void bossy3SecWeapon::Render(sf::RenderWindow &window){
 	if (m_active){
 
 		//check for mouseOver
@@ -77,16 +77,16 @@ void Boss3SecWeapon::Render(sf::RenderWindow &window){
 	}
 }
 
-void Boss3SecWeapon::setPosition(float x, float y){
+void bossy3SecWeapon::setPosition(float x, float y){
 	sprite.setPosition(x, y);
 }
 
-void Boss3SecWeapon::reduceHealth(int pDamage){
+void bossy3SecWeapon::reduceHealth(int pDamage){
 	m_health -= pDamage;
 }
 
 //Healthbar init
-void Boss3SecWeapon::initHealthBar(){
+void bossy3SecWeapon::initHealthBar(){
 
 	//load Texture
 	if (!m_healthTex.loadFromFile("graphics/enemies/health.png")){
@@ -104,7 +104,7 @@ void Boss3SecWeapon::initHealthBar(){
 }
 
 //Healthbar Update
-void Boss3SecWeapon::UpdateHealthBar(){
+void bossy3SecWeapon::UpdateHealthBar(){
 
 	//first set the Position of the Shape
 	m_healthbar.setPosition(m_xPos, (m_yPos - 10.0f - sprite.getLocalBounds().height / 2)); ///< see how it behaves with origin
@@ -119,7 +119,7 @@ void Boss3SecWeapon::UpdateHealthBar(){
 	m_healthbar.setTextureRect(sf::IntRect((int)showAmount, 0, m_healthTex.getSize().x, m_healthTex.getSize().y));
 }
 
-void Boss3SecWeapon::initDeath(){
+void bossy3SecWeapon::initDeath(){
 	if (m_die){
 		sprite.rotate(5);
 		m_scale.x -= 0.01f;
@@ -133,6 +133,6 @@ void Boss3SecWeapon::initDeath(){
 }
 
 //sets the entity active or inactive
-void Boss3SecWeapon::setActiveBool(bool active){
+void bossy3SecWeapon::setActiveBool(bool active){
 	m_active = active;
 }

@@ -1,16 +1,16 @@
 
 
-#ifndef GRAPHICSET_H
-#define GRAPHICSET_H
+#ifndef graphics_H
+#define graphics_H
 
 #include "Game.h"
 #include "IOstuff.h"
 #include "MenuSfx.h"
 
-class GraphicSet : public GameState{
+class graphics : public GameState{
 public:
-	GraphicSet();
-	~GraphicSet();
+	graphics();
+	~graphics();
 
 	void HandleEvents(Game &game);
 	void Update(Game &game);

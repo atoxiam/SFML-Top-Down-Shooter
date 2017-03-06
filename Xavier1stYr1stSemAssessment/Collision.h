@@ -74,13 +74,13 @@ namespace coll{
 	}
 
 	template <class Object, class ObjectList>
-	void BossCollision(Object &obj, std::vector<ObjectList> &objList, int &points, IngameSound &sound, HighscoreManager&highscore, bool &boss1Dead){
+	void BossCollision(Object &obj, std::vector<ObjectList> &objList, int &points, IngameSound &sound, HighscoreManager&highscore, bool &bossy1Dead){
 		//Boss 1 Collision detection
 		for (unsigned int i = 0; i < objList.size(); i++){
 			if (objList[i].getActiveBool()){
 				if (obj->sprite.getGlobalBounds().intersects(objList[i].sprite.getGlobalBounds())){
 					obj->setActiveBool(false);
-					sound.PlaySound("boss1Hit");
+					sound.PlaySound("bossy1Hit");
 					highscore.setShotsGot(1);
 					objList[i].reduceHealth(obj->getDamage());
 					if (objList[i].getHealth() <= 0){
@@ -88,7 +88,7 @@ namespace coll{
 						objList[i].setActiveBool(false);
 						points += 20;
 						highscore.setEnemyKilled(1);
-						boss1Dead = true;
+						bossy1Dead = true;
 					}
 				}
 			}
@@ -96,13 +96,13 @@ namespace coll{
 	}
 
 	template <class Object, class ObjectList>
-	void Boss2Collision(Object &obj, std::vector<ObjectList> &objList, int &points, IngameSound &sound, HighscoreManager&highscore){
+	void bossy2Collision(Object &obj, std::vector<ObjectList> &objList, int &points, IngameSound &sound, HighscoreManager&highscore){
 		//Boss 2 Collision detection
 		for (unsigned int i = 0; i < objList.size(); i++){
 			if (objList[i].getActiveBool()){
 				if (obj->sprite.getGlobalBounds().intersects(objList[i].sprite.getGlobalBounds())){
 					obj->setActiveBool(false);
-					sound.PlaySound("boss1Hit");
+					sound.PlaySound("bossy1Hit");
 					highscore.setShotsGot(1);
 					objList[i].reduceHealth(obj->getDamage());
 					if (objList[i].getHealth() <= 0){
@@ -170,7 +170,7 @@ namespace coll{
 	}
 
 	template <class Object, class ObjectList>
-	void PlayerUnlockPew(std::vector<ObjectList> &objectList, Object &pPlayer, IngameSound &sound, bool &gotPew, bool &pewOnCooldown){
+	void PlayerUnlockBoomy(std::vector<ObjectList> &objectList, Object &pPlayer, IngameSound &sound, bool &gotPew, bool &pewOnCooldown){
 		//Player Collision to unlock the third weapon
 		sf::Sprite pSprite = pPlayer.playerSprite;
 		for (unsigned int i = 0; i < objectList.size(); i++)	{
@@ -188,55 +188,55 @@ namespace coll{
 		}
 	}
 	template <class Object>
-	void Boss3Collision(std::vector<Boss3> &boss3v, Object &obj, IngameSound &sound, HighscoreManager &highscore, int &points, bool &boss3dead){
-		//boss3 collision weapon to boss3
-		for (unsigned int i = 0; i < boss3v.size(); i++){
+	void bossy3Collision(std::vector<bossy3> &bossy3v, Object &obj, IngameSound &sound, HighscoreManager &highscore, int &points, bool &bossy3dead){
+		//bossy3 collision weapon to bossy3
+		for (unsigned int i = 0; i < bossy3v.size(); i++){
 			//collision for first state
-			if (boss3v[i].getCurrentState() == 1.5){
+			if (bossy3v[i].getCurrentState() == 1.5){
 				//collision for left Spawner
-				if (boss3v[i].getHead1Active()){
-					if (obj->sprite.getGlobalBounds().intersects(boss3v[i].headSprite1.getGlobalBounds())){
+				if (bossy3v[i].getHead1Active()){
+					if (obj->sprite.getGlobalBounds().intersects(bossy3v[i].headSprite1.getGlobalBounds())){
 						obj->setActiveBool(false);
 						sound.PlaySound("enemyCollision");
 						highscore.setShotsGot(1);
-						boss3v[i].setHead1Position(boss3v[i].getHead1XPosition(), boss3v[i].getHead1YPosition() - 2);
+						bossy3v[i].setHead1Position(bossy3v[i].getHead1XPosition(), bossy3v[i].getHead1YPosition() - 2);
 					}
 				}
 
 				//collision for right spawner
-				if (boss3v[i].getHead2Active()){
-					if (obj->sprite.getGlobalBounds().intersects(boss3v[i].headSprite2.getGlobalBounds()))
+				if (bossy3v[i].getHead2Active()){
+					if (obj->sprite.getGlobalBounds().intersects(bossy3v[i].headSprite2.getGlobalBounds()))
 					{
 						obj->setActiveBool(false);
 						sound.PlaySound("enemyCollision");
 						highscore.setShotsGot(1);
-						boss3v[i].setHead2Position(boss3v[i].getHead2XPosition(), boss3v[i].getHead2YPosition() -2);
+						bossy3v[i].setHead2Position(bossy3v[i].getHead2XPosition(), bossy3v[i].getHead2YPosition() -2);
 					}
 				}
 			}
 //_____________________________________________________________________________________________________________________________________
-			if (boss3v[i].getCurrentState() == 2.5){
+			if (bossy3v[i].getCurrentState() == 2.5){
 				//collision for camel spawner
-				if (boss3v[i].getcamelMActive()){
-					if (obj->sprite.getGlobalBounds().intersects(boss3v[i].camelSprite.getGlobalBounds())){
+				if (bossy3v[i].getcamelMActive()){
+					if (obj->sprite.getGlobalBounds().intersects(bossy3v[i].camelSprite.getGlobalBounds())){
 						obj->setActiveBool(false);
 						sound.PlaySound("enemyCollision");
 						highscore.setShotsGot(1);
-						boss3v[i].setcamelMPosition(boss3v[i].getcamelMXPosition(), boss3v[i].getcamelMYPosition() -2);
+						bossy3v[i].setcamelMPosition(bossy3v[i].getcamelMXPosition(), bossy3v[i].getcamelMYPosition() -2);
 					}
 				}
 			}
 //_____________________________________________________________________________________________________________________________________
-			if (boss3v[i].getCurrentState() >= 3 && boss3v[i].getCurrentState() <= 4){
-				if (boss3v[i].getActiveBool()){
-					if (obj->sprite.getGlobalBounds().intersects(boss3v[i].sprite.getGlobalBounds())){
+			if (bossy3v[i].getCurrentState() >= 3 && bossy3v[i].getCurrentState() <= 4){
+				if (bossy3v[i].getActiveBool()){
+					if (obj->sprite.getGlobalBounds().intersects(bossy3v[i].sprite.getGlobalBounds())){
 						obj->setActiveBool(false);
 						sound.PlaySound("enemyCollision");
 						highscore.setShotsGot(1);
-						boss3v[i].reduceHealth(obj->getDamage());
-						if (boss3v[i].getGoneDead()){
-							sound.PlaySound("boss3death");
-							boss3dead = false;
+						bossy3v[i].reduceHealth(obj->getDamage());
+						if (bossy3v[i].getGoneDead()){
+							sound.PlaySound("bossy3death");
+							bossy3dead = false;
 							points += 150;
 						}
 					}

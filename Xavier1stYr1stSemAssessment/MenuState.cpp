@@ -1,10 +1,10 @@
 
 
 #define PI 3.14159
-#include "MainMenuState.h"
+#include "MenuState.h"
 #include <cmath>
 
-MainMenuState::MainMenuState(){
+MenuState::MenuState(){
 	m_bg.setFilePath("graphics/core/menu.png");
 	
 	//sound & music
@@ -24,10 +24,10 @@ MainMenuState::MainMenuState(){
 	initFading();
 }
 
-MainMenuState::~MainMenuState(){
+MenuState::~MenuState(){
 }
 
-void MainMenuState::HandleEvents(Game &game){
+void MenuState::HandleEvents(Game &game){
 	sf::Event pEvent;
 
 	while (game.window.pollEvent(pEvent)){
@@ -72,7 +72,7 @@ void MainMenuState::HandleEvents(Game &game){
 	}//End if !fadeOut
 }
 
-void MainMenuState::Update(Game &game){
+void MenuState::Update(Game &game){
 
 	//Update Mouse Rectangle
 	m_MouseRect = sf::Rect<float>((float)sf::Mouse::getPosition(game.window).x,
@@ -83,7 +83,7 @@ void MainMenuState::Update(Game &game){
 		updateMouseSelection();
 	}
 
-	//Do color shit
+	//Do color yes
 	updateButtonColor();
 
 
@@ -97,7 +97,7 @@ void MainMenuState::Update(Game &game){
 	}
 }
 
-void MainMenuState::Render(Game &game){
+void MenuState::Render(Game &game){
 	//draw Background
 	m_bg.Render(game.window);
 
@@ -119,7 +119,7 @@ void MainMenuState::Render(Game &game){
 }
 
 //Init fading
-void MainMenuState::initFading(){
+void MenuState::initFading(){
 
 	if (!m_fadingTex.loadFromFile("graphics/core/settings.jpg")){
 		perror("could not load fading graphic from \"graphics/core/settings.jpg\" \n");
@@ -136,7 +136,7 @@ void MainMenuState::initFading(){
 }
 
 //fade out by increasing the alpha-Value
-void MainMenuState::fadeOut() {
+void MenuState::fadeOut() {
 
 	//increase as long as value is not 255
 	if (m_fadingAlpha <= 255) {
@@ -147,7 +147,7 @@ void MainMenuState::fadeOut() {
 }
 
 //change the state (after fadeOut is done)
-void MainMenuState::changeState(Game& game){
+void MenuState::changeState(Game& game){
 	//if the fadeOut is done we are ready to change the screen
 	if (m_fadingAlpha >= 255){
 
@@ -180,7 +180,7 @@ void MainMenuState::changeState(Game& game){
 }
 
 //set Up Variables and Stuff for the Enemy
-void MainMenuState::initEnemy(){
+void MenuState::initEnemy(){
 
 	m_elapsedTime = 0.0f;
 	m_x_movement = 0.0f;
@@ -194,7 +194,7 @@ void MainMenuState::initEnemy(){
 }
 
 //set up the Buttons
-void MainMenuState::initButtons(){
+void MenuState::initButtons(){
 
 	play.setStringAndSize("play", 70);
 	play.setPosition(270, 150);
@@ -213,7 +213,7 @@ void MainMenuState::initButtons(){
 }
 
 //Update the Color of the Buttons depending on their selection
-void MainMenuState::updateButtonColor(){
+void MenuState::updateButtonColor(){
 
 	//Play
 	if (m_selection == 0){
@@ -253,7 +253,7 @@ void MainMenuState::updateButtonColor(){
 }
 
 //Update the Enemy
-void MainMenuState::updateEnemy(){
+void MenuState::updateEnemy(){
 
 	//get the elapsed time
 	m_elapsedTime = (float)m_clock.restart().asMilliseconds();
@@ -274,7 +274,7 @@ void MainMenuState::updateEnemy(){
 }
 
 //Update the Selection done with the cursor
-void MainMenuState::updateMouseSelection(){
+void MenuState::updateMouseSelection(){
 	//play
 	if (play.getGlobalBounds().intersects(m_MouseRect)){
 		if (m_selection != 0){
@@ -315,7 +315,7 @@ void MainMenuState::updateMouseSelection(){
 }
 
 //returns true if mouse is intersecting with button
-bool MainMenuState::mouseIsIntersecting(){
+bool MenuState::mouseIsIntersecting(){
 	//play
 	if (play.getGlobalBounds().intersects(m_MouseRect)){
 		return true;

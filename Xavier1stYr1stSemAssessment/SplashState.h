@@ -34,11 +34,11 @@ private:
 	int m_alphaSFML;			///< Alpha value for fading
 	bool m_sfmlShown;			///< If this is true -> SFML logo has been shown
 
-	//ShitSoft
-	sf::Texture m_shitSoftTex;	///< Texture of ShitSoft-Logo
-	sf::Sprite m_shitSoftSprite;///< Sprite for ShitSoft Texture
-	int m_alphaShitSoft;		///< Alpha value for fading
-	bool m_shitSoftShown;		///< If this is true -> ShitSoft logo has been shown
+	//yesSoft
+	sf::Texture m_yesSoftTex;	///< Texture of yesSoft-Logo
+	sf::Sprite m_yesSoftSprite;///< Sprite for yesSoft Texture
+	int m_alphayesSoft;		///< Alpha value for fading
+	bool m_yesSoftShown;		///< If this is true -> yesSoft logo has been shown
 
 	//Credits
 	Text m_credits;				///< Textholder for Credits

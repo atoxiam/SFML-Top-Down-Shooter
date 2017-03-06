@@ -21,13 +21,13 @@
   <ItemGroup>
     <ClInclude Include="BasicStuff.h" />
     <ClInclude Include="BasicStuffIncludes.h" />
-    <ClInclude Include="Boss1.h" />
-    <ClInclude Include="Boss1Weapon.h" />
-    <ClInclude Include="Boss2.h" />
-    <ClInclude Include="Boss2Weapon.h" />
-    <ClInclude Include="Boss3.h" />
-    <ClInclude Include="Boss3firstWeapon.h" />
-    <ClInclude Include="Boss3SecWeapon.h" />
+    <ClInclude Include="bossy1.h" />
+    <ClInclude Include="bossy1Weapon.h" />
+    <ClInclude Include="bossy2.h" />
+    <ClInclude Include="bossy2Weapon.h" />
+    <ClInclude Include="bossy3.h" />
+    <ClInclude Include="bossy3firstWeapon.h" />
+    <ClInclude Include="bossy3SecWeapon.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="CollisionManager.h" />
@@ -41,7 +41,7 @@
     <ClInclude Include="EventHandler.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />
-    <ClInclude Include="GraphicSet.h" />
+    <ClInclude Include="Graphics.h" />
     <ClInclude Include="GUI.h" />
     <ClInclude Include="HealthDrop.h" />
     <ClInclude Include="Highscore.h" />
@@ -56,12 +56,12 @@
     <ClInclude Include="IOsound.h" />
     <ClInclude Include="IOstuff.h" />
     <ClInclude Include="IOtwoPlayer.h" />
-    <ClInclude Include="MainMenuState.h" />
+    <ClInclude Include="MenuState.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="MenuSfx.h" />
     <ClInclude Include="MessageHandler.h" />
     <ClInclude Include="Music.h" />
-    <ClInclude Include="Pew.h" />
+    <ClInclude Include="Boomy.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Player2.h" />
     <ClInclude Include="PlayState.h" />
@@ -73,7 +73,7 @@
     <ClInclude Include="SpawnManager.h" />
     <ClInclude Include="SplashState.h" />
     <ClInclude Include="StateManager.h" />
-    <ClInclude Include="UnlockPew.h" />
+    <ClInclude Include="UnlockBoomy.h" />
     <ClInclude Include="UpdateManager.h" />
     <ClInclude Include="VectorOperation.h" />
     <ClInclude Include="WeaponManager.h" />
@@ -81,11 +81,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BasicStuff.cpp" />
-    <ClCompile Include="Boss1.cpp" />
-    <ClCompile Include="Boss1Weapon.cpp" />
-    <ClCompile Include="Boss2.cpp" />
-    <ClCompile Include="Boss2Weapon.cpp" />
-    <ClCompile Include="Boss3.cpp" />
+    <ClCompile Include="bossy1.cpp" />
+    <ClCompile Include="bossy1Weapon.cpp" />
+    <ClCompile Include="bossy2.cpp" />
+    <ClCompile Include="bossy2Weapon.cpp" />
+    <ClCompile Include="bossy3.cpp" />
     <ClCompile Include="Boss3firstWeapon.cpp" />
     <ClCompile Include="Boss3SecWeapon.cpp" />
     <ClCompile Include="Bullet.cpp" />
@@ -97,7 +97,7 @@
     <ClCompile Include="EnemyFormation.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="GraphicSet.cpp" />
+    <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="GUI.cpp" />
     <ClCompile Include="HealthDrop.cpp" />
     <ClCompile Include="Highscore.cpp" />
@@ -113,11 +113,11 @@
     <ClCompile Include="IOstuff.cpp" />
     <ClCompile Include="IOtwoPlayer.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MainMenuState.cpp" />
+    <ClCompile Include="MenuState.cpp" />
     <ClCompile Include="MenuSfx.cpp" />
     <ClCompile Include="MessageHandler.cpp" />
     <ClCompile Include="Music.cpp" />
-    <ClCompile Include="Pew.cpp" />
+    <ClCompile Include="Boomy.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Player2.cpp" />
     <ClCompile Include="PlayState.cpp" />
@@ -127,7 +127,7 @@
     <ClCompile Include="doggo.cpp" />
     <ClCompile Include="SpawnManager.cpp" />
     <ClCompile Include="SplashState.cpp" />
-    <ClCompile Include="UnlockPew.cpp" />
+    <ClCompile Include="UnlockBoomy.cpp" />
     <ClCompile Include="WeaponManager.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

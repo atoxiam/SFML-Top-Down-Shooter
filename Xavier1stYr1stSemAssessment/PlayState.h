@@ -66,19 +66,19 @@ private:
 	std::vector<Enemy>						enemyv;
 	std::vector<EnemyFormation>				enemyFormationv;
 	std::vector<doggo>				monkeyv;
-	std::vector<Boss1>						boss1v;
+	std::vector<bossy1>						bossy1v;
 	std::vector<camel>						camelv;
-	std::vector<bullets>				shitv;
-	std::vector<Boss1Weapon>				b1Weaponv;
+	std::vector<bullets>				yesv;
+	std::vector<bossy1Weapon>				b1Weaponv;
 	std::vector<HealthDrop>					healthv;
-	std::vector<UnlockPew>					unlockPewv;
-	std::vector<Pew>						pewv;
-	std::vector<Pew>::iterator				pewIt;
-	std::vector<Boss2>						boss2v;
-	std::vector<Boss2Weapon>				boss2Weaponv;
-	std::vector<Boss3>						boss3v;
-	std::vector<Boss3firstWeapon>			boss3FWeaponv;
-	std::vector<Boss3SecWeapon>				boss3SWeaponv;
+	std::vector<UnlockBoomy>					UnlockBoomyv;
+	std::vector<Boomy>						pewv;
+	std::vector<Boomy>::iterator				pewIt;
+	std::vector<bossy2>						bossy2v;
+	std::vector<bossy2Weapon>				bossy2Weaponv;
+	std::vector<bossy3>						bossy3v;
+	std::vector<bossy3firstWeapon>			bossy3FWeaponv;
+	std::vector<bossy3SecWeapon>				bossy3SWeaponv;
 
 	//integer
 	int volume;
@@ -87,12 +87,12 @@ private:
 	int bulletTimeCount;
 	int enemyTimeCount;
 	int enemyFormationCount;
-	int shitCount;
-	int boss1WeaponCount;
-	int boss2WeaponCount;
-	int boss3FirstWeaponCount1;
-	int boss3FirstWeaponCount2;
-	int boss3SecWeaponCount;
+	int yesCount;
+	int bossy1WeaponCount;
+	int bossy2WeaponCount;
+	int bossy3FirstWeaponCount1;
+	int bossy3FirstWeaponCount2;
+	int bossy3SecWeaponCount;
 	int camelTimeCount;
 	int healthDropCount;
 	int randomX;
@@ -105,10 +105,10 @@ private:
 
 	//bool
 	bool paused			= false;
-	bool boss1Dead		= false;
+	bool bossy1Dead		= false;
 	bool gotPew			= false;
 	bool pewOnCooldown  = false;
-	bool boss3dead		= false;
+	bool bossy3dead		= false;
 };
 
 #endif

@@ -1,32 +1,27 @@
 
-#ifndef BOSS3SECWEAPON_H
-#define BOSS3SECWEAPON_H
+
+#ifndef bossy3FIRSTWEAPON_H
+#define bossy3FIRSTWEAPON_H
 
 #include <SFML/Graphics.hpp>
 #include "IOstuff.h"
 
-class Boss3SecWeapon{
+class bossy3firstWeapon{
 public:
-	Boss3SecWeapon();
+	bossy3firstWeapon();
 	void Update(sf::RenderWindow &window, float &elapsedTime);
 	void Render(sf::RenderWindow &window);
+
+	//setter
 	void setPosition(float x, float y);
 	void setActiveBool(bool active);
 
-	//setter
-	void reduceHealth(int pDamage);
-	void setDie(bool die){ m_die = die; }
-	bool getActiveBool() const { return m_active; }
-
-	//getter
-	int getHealth() const { return m_health; };
+	//getters
 	int getDamage() const { return 5 * m_diff; };
-	bool getDie() const { return m_die; }
-
+	bool getActiveBool() const { return m_active; }
+	
 	sf::Sprite sprite;
-
 private:
-	void initDeath();
 	void initHealthBar();
 	void UpdateHealthBar();
 
@@ -38,15 +33,12 @@ private:
 	int m_health;			///< actual health
 	int m_maxHealth;		///< max amount of health;
 
-	bool m_active;			///< if this is true-> it is active
 	bool m_hasTargetTexture;///< true = is target | false = is not target
-	bool m_die;				///< if this is true-> init death animation
-
-	sf::Vector2f m_scale;	///< Scale to set smaller if death inits
+	bool m_active;			///< if this is true-> it is active
 
 	static sf::Texture m_weaponTex;
 	static sf::Texture m_healthTex;
 	sf::RectangleShape m_healthbar;
-
 };
+
 #endif

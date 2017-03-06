@@ -10,9 +10,9 @@
 #include "bullets.h"
 #include "HealthDrop.h"
 #include "DoubleShot.h"
-#include "Boss1.h"
-#include "Boss1Weapon.h"
-#include "UnlockPew.h"
-#include "Pew.h"
+#include "bossy1.h"
+#include "bossy1Weapon.h"
+#include "UnlockBoomy.h"
+#include "Boomy.h"
 
 #endif

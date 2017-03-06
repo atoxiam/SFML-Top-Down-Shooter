@@ -14,8 +14,8 @@ void SpawnManager::EnemySpawn(int &counter, std::vector<Enemy> &vector, std::vec
 }
 
 //spawns enemy formation
-void SpawnManager::EnemyFormationSpawn(int &counter, std::vector<EnemyFormation> &vector, std::vector<Boss2> &boss2v){
-	if (counter >= 15000 && boss2v.size() == 0)	{
+void SpawnManager::EnemyFormationSpawn(int &counter, std::vector<EnemyFormation> &vector, std::vector<bossy2> &bossy2v){
+	if (counter >= 15000 && bossy2v.size() == 0)	{
 		EnemyFormation enemy0;
 		EnemyFormation enemy1;
 		EnemyFormation enemy2;
@@ -65,7 +65,7 @@ void SpawnManager::HealthDropSpawn(int &counter, std::vector<HealthDrop> &vector
 }
 
 //spawns doggo
-void SpawnManager::doggoSpawn(int &points, std::vector<doggo> &vector, std::vector<Boss2> &bossV){
+void SpawnManager::doggoSpawn(int &points, std::vector<doggo> &vector, std::vector<bossy2> &bossV){
 	if (points > 1 && points % 300 == 0 && bossV.size() == 0)	{
 		points += 10;
 		doggo monkey;
@@ -74,45 +74,45 @@ void SpawnManager::doggoSpawn(int &points, std::vector<doggo> &vector, std::vect
 	}
 }
 
-//spawns Shit (belongs to monkey)
-void SpawnManager::ShitSpawn(int &counter, std::vector<doggo> &smVector, std::vector<bullets> &sVector, IngameSound &sound){
+//spawns 
+void SpawnManager::yesSpawn(int &counter, std::vector<doggo> &smVector, std::vector<bullets> &sVector, IngameSound &sound){
 	for (unsigned int i = 0; i < smVector.size(); i++)	{
 		if (smVector[i].getActiveBool() && counter >= 1500)		{
-			bullets shitx;
-			shitx.SetPosition(smVector[i].getPosition().x, smVector[i].getPosition().y);
+			bullets yesx;
+			yesx.SetPosition(smVector[i].getPosition().x, smVector[i].getPosition().y);
 			sound.PlaySound("fart");
-			sVector.push_back(shitx);
+			sVector.push_back(yesx);
 			counter = 0;
 		}
 	}
 }
 
 //spawns first boss
-void SpawnManager::Boss1Spawn(int &points, std::vector<Boss1> &vector){
+void SpawnManager::bossy1Spawn(int &points, std::vector<bossy1> &vector){
 	if (points > 1 && points > 2000 && points < 2025)	{
 		points += 30;
-		Boss1 Boss1x;
-		vector.push_back(Boss1x);
+		bossy1 bossy1x;
+		vector.push_back(bossy1x);
 	}
 }
 
 //spawns pew unlock perk
-void SpawnManager::UnlockPewSpawn(bool &boss1Dead, std::vector<UnlockPew> &vector){
-	if (boss1Dead){
-		UnlockPew unlockPewx;
-		unlockPewx.SetPosition(400, 100);
-		vector.push_back(unlockPewx);
-		boss1Dead = false;
+void SpawnManager::UnlockBoomySpawn(bool &bossy1Dead, std::vector<UnlockBoomy> &vector){
+	if (bossy1Dead){
+		UnlockBoomy UnlockBoomyx;
+		UnlockBoomyx.SetPosition(400, 100);
+		vector.push_back(UnlockBoomyx);
+		bossy1Dead = false;
 	}
 }
 
-//spawns boss1 weapon
-void SpawnManager::Boss1WeaponSpawn(int &counter, std::vector<Boss1Weapon> &bwVector, std::vector<Boss1> &bVector, IngameSound &sound){
+//spawns bossy1 weapon
+void SpawnManager::bossy1WeaponSpawn(int &counter, std::vector<bossy1Weapon> &bwVector, std::vector<bossy1> &bVector, IngameSound &sound){
 	for (unsigned int i = 0; i < bVector.size(); i++)	{
 		if (bVector[i].getActiveBool() && counter >= 1000)		{
-			Boss1Weapon b1Weaponx;
+			bossy1Weapon b1Weaponx;
 			b1Weaponx.setPosition(bVector[i].getPosition().x, bVector[i].getPosition().y);
-			sound.PlaySound("pew");
+			sound.PlaySound("boomy");
 			bwVector.push_back(b1Weaponx);
 			counter = 0;
 		}
@@ -186,44 +186,44 @@ void SpawnManager::DoubleShotSpawn2(int &counter, std::vector<DoubleShot> &vecto
 	}
 }
 
-//spawns pew
-void SpawnManager::PewSpawn(std::vector<Pew> &vector, HighscoreManager &highscore, WeaponManager &weapon, Player &player, IngameSound &sound, bool &pewOnCooldown, sf::RenderWindow& window){
+//spawns boomy
+void SpawnManager::PewSpawn(std::vector<Boomy> &vector, HighscoreManager &highscore, WeaponManager &weapon, Player &player, IngameSound &sound, bool &pewOnCooldown, sf::RenderWindow& window){
 	if (weapon.pewA && !pewOnCooldown)	{
-		Pew pewx(player.getPosition().x, player.getPosition().y, window);
+		Boomy pewx(player.getPosition().x, player.getPosition().y, window);
 		highscore.setShotsFired(1);
 		pewx.SetPosition(player.getPosition().x - 4, player.getPosition().y);
 		vector.push_back(pewx);
-		sound.PlaySound("pew");
+		sound.PlaySound("boomy");
 		pewOnCooldown = true;
 	}
 }
 
-//spawns pew for player 2
-void SpawnManager::PewSpawn2(std::vector<Pew> &vector, HighscoreManager &highscore, WeaponManager &weapon, Player2 &player, IngameSound &sound, bool &pewOnCooldown, sf::RenderWindow& window){
+//spawns boomy for player 2
+void SpawnManager::PewSpawn2(std::vector<Boomy> &vector, HighscoreManager &highscore, WeaponManager &weapon, Player2 &player, IngameSound &sound, bool &pewOnCooldown, sf::RenderWindow& window){
 	if (weapon.pewA && !pewOnCooldown)	{
-		Pew pewx(player.getPosition().x, player.getPosition().y, window);
+		Boomy pewx(player.getPosition().x, player.getPosition().y, window);
 		highscore.setShotsFired(1);
 		pewx.SetPosition(player.getPosition().x - 4, player.getPosition().y);
 		vector.push_back(pewx);
-		sound.PlaySound("pew");
+		sound.PlaySound("boomy");
 		pewOnCooldown = true;
 	}
 }
 
-//spawns boss2
-void SpawnManager::Boss2Spawn(std::vector<Boss2> &vector, int &points){
+//spawns bossy2
+void SpawnManager::bossy2Spawn(std::vector<bossy2> &vector, int &points){
 	if (points >= 2800 && points < 2899)	{
-		Boss2 boss2x;
-		boss2x.setPosition(400, -300);
-		vector.push_back(boss2x);
+		bossy2 bossy2x;
+		bossy2x.setPosition(400, -300);
+		vector.push_back(bossy2x);
 		points += 100;
 	}
 }
 
-void SpawnManager::Boss2WeaponSpawn(int &counter, std::vector<Boss2Weapon> &bwvector, std::vector<Boss2> &bvector){
+void SpawnManager::bossy2WeaponSpawn(int &counter, std::vector<bossy2Weapon> &bwvector, std::vector<bossy2> &bvector){
 	for (unsigned int i = 0; i < bvector.size(); i++)	{
 		if (bvector[i].getActiveBool() && bvector[i].getfadeIn() && counter >= 2000){
-			Boss2Weapon b2Wx;
+			bossy2Weapon b2Wx;
 			b2Wx.setPosition(bvector[i].getPosition().x, bvector[i].getPosition().y);
 			bwvector.push_back(b2Wx);
 			counter = 0;
@@ -231,26 +231,26 @@ void SpawnManager::Boss2WeaponSpawn(int &counter, std::vector<Boss2Weapon> &bwve
 	}
 }
 
-void SpawnManager::Boss3Spawn(std::vector<Boss3> &vector, int &points, IngameSound &sound){
+void SpawnManager::bossy3Spawn(std::vector<bossy3> &vector, int &points, IngameSound &sound){
 	if (points >= 4100 && points < 4109)	{
-		Boss3 boss3x;
-		sound.PlaySound("boss3spawn");
-		vector.push_back(boss3x);
+		bossy3 bossy3x;
+		sound.PlaySound("bossy3spawn");
+		vector.push_back(bossy3x);
 		points += 10;
 	}
 }
 
-void SpawnManager::Boss3FirstWeaponSpawn(int &counter1, int &counter2, std::vector<Boss3firstWeapon> &vector, std::vector<Boss3> &bVector, IngameSound &sound){
+void SpawnManager::bossy3FirstWeaponSpawn(int &counter1, int &counter2, std::vector<bossy3firstWeapon> &vector, std::vector<bossy3> &bVector, IngameSound &sound){
 	for (unsigned int i = 0; i < bVector.size(); i++)	{
 		if (bVector[i].getActiveBool() && bVector[i].getCurrentState() == 1.5 && bVector[i].getHead1Active() && counter1 >= 1500){ //left Spawner
-			Boss3firstWeapon b3Wx1;
+			bossy3firstWeapon b3Wx1;
 			b3Wx1.setPosition(bVector[i].getHead1XPosition() + 50, bVector[i].getHead1YPosition() + 50);
 			vector.push_back(b3Wx1);
 			counter1 = 0;
 		}
 
 		if (bVector[i].getActiveBool() && bVector[i].getCurrentState() == 1.5 && bVector[i].getHead2Active() && counter2 >= 1500){ //right Spawner
-			Boss3firstWeapon b3Wx2;
+			bossy3firstWeapon b3Wx2;
 			b3Wx2.setPosition(bVector[i].getHead2XPosition() + 50, bVector[i].getHead2YPosition() + 50);
 			vector.push_back(b3Wx2);
 			counter2 = 0;
@@ -258,10 +258,10 @@ void SpawnManager::Boss3FirstWeaponSpawn(int &counter1, int &counter2, std::vect
 	}
 }
 
-void SpawnManager::Boss3SecWeaponSpawn(int &counter, std::vector<Boss3SecWeapon> &vector, std::vector<Boss3> &bVector, IngameSound &sound){
+void SpawnManager::bossy3SecWeaponSpawn(int &counter, std::vector<bossy3SecWeapon> &vector, std::vector<bossy3> &bVector, IngameSound &sound){
 	for (unsigned int i = 0; i < bVector.size(); i++)	{
 		if (bVector[i].getActiveBool() && bVector[i].getCurrentState() == 2.5 && bVector[i].getcamelMActive() && counter >= 1500){
-			Boss3SecWeapon b3Wx;
+			bossy3SecWeapon b3Wx;
 			b3Wx.setPosition(bVector[i].getcamelMXPosition() + 50, bVector[i].getcamelMYPosition() + 50);
 			vector.push_back(b3Wx);
 			counter = 0;

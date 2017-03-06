@@ -1,13 +1,11 @@
-//Pew.h
-
-#ifndef PEW_H
-#define PEW_H
+#ifndef BOOMY_H
+#define BOOMY_H
 
 #include <SFML/Graphics.hpp>
 
-class Pew{
+class Boomy{
 public:
-	Pew(float playerPosX, float playerPosY, sf::RenderWindow& window);
+	Boomy(float playerPosX, float playerPosY, sf::RenderWindow& window);
 
 	void Update(float elapsedTime);
 	void Render(sf::RenderWindow &window);

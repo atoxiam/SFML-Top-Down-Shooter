@@ -1,8 +1,8 @@
 
 
-#include "GraphicSet.h"
+#include "graphics.h"
 
-GraphicSet::GraphicSet(){
+graphics::graphics(){
 	//basic stuff
 	m_bg.setFilePath("graphics/core/settings.jpg");
 
@@ -28,11 +28,11 @@ GraphicSet::GraphicSet(){
 	initFading();
 }
 
-GraphicSet::~GraphicSet(){
+graphics::~graphics(){
 	//Empty
 }
 
-void GraphicSet::HandleEvents(Game &game){
+void graphics::HandleEvents(Game &game){
 	sf::Event pEvent;
 	while (game.window.pollEvent(pEvent)){
 		if (pEvent.type == sf::Event::Closed)
@@ -100,7 +100,7 @@ void GraphicSet::HandleEvents(Game &game){
 		}//Endig !fadeOut
 	}
 }
-void GraphicSet::Update(Game &game)
+void graphics::Update(Game &game)
 {
 	//update elapsedTime
 	m_elapsedTime = (float)m_clock.restart().asMilliseconds();
@@ -138,7 +138,7 @@ void GraphicSet::Update(Game &game)
 		changeState(game);
 	}
 }
-void GraphicSet::Render(Game &game){
+void graphics::Render(Game &game){
 	//Render Background
 	m_bg.Render(game.window);
 
@@ -158,7 +158,7 @@ void GraphicSet::Render(Game &game){
 }
 
 //Initialize Buttons
-void GraphicSet::initButtons(){
+void graphics::initButtons(){
 	smooth.setStringAndSize("Smooth", 70);
 	fullscreen.setStringAndSize("Fullscreen", 70);
 	falseS.setStringAndSize("false", 50);
@@ -182,7 +182,7 @@ void GraphicSet::initButtons(){
 }
 
 //Init fading
-void GraphicSet::initFading(){
+void graphics::initFading(){
 
 	if (!m_fadingTex.loadFromFile("graphics/core/settings.jpg")){
 		perror("could not load fading graphic from \"graphics/core/settings.jpg\" \n");
@@ -199,7 +199,7 @@ void GraphicSet::initFading(){
 }
 
 //fade out by increasing the alpha-Value
-void GraphicSet::fadeOut() {
+void graphics::fadeOut() {
 
 	//increase as long as value is not 255
 	if (m_fadingAlpha <= 255) {
@@ -210,7 +210,7 @@ void GraphicSet::fadeOut() {
 }
 
 //change the state (after fadeOut is done)
-void GraphicSet::changeState(Game& game){
+void graphics::changeState(Game& game){
 
 	//Go back to Settings
 	if (m_fadingAlpha >= 255){
@@ -219,7 +219,7 @@ void GraphicSet::changeState(Game& game){
 }
 
 //Update the Selection done with the cursor
-void GraphicSet::updateMouseSelection(){
+void graphics::updateMouseSelection(){
 
 	//Smooth false
 	if (falseS.getGlobalBounds().intersects(m_MouseRect)){
@@ -263,7 +263,7 @@ void GraphicSet::updateMouseSelection(){
 }
 
 //Update the Color of the Buttons depending on their selection
-void GraphicSet::updateButtonColor(){
+void graphics::updateButtonColor(){
 	if (!m_selectionV){
 		if (m_isFull){
 			falseF.setColor(sf::Color(255, 255, 255));
@@ -304,7 +304,7 @@ void GraphicSet::updateButtonColor(){
 }
 
 //returns true if mouse is intersecting with button
-bool GraphicSet::mouseIsIntersecting(){
+bool graphics::mouseIsIntersecting(){
 	//Smooth false
 	if (falseS.getGlobalBounds().intersects(m_MouseRect)){
 		return true;

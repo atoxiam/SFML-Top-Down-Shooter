@@ -1,10 +1,10 @@
 
 
-#include "Pew.h"
+#include "Boomy.h"
 
-sf::Texture Pew::pewShotTex;
+sf::Texture Boomy::pewShotTex;
 
-Pew::Pew(float playerPosX, float playerPosY, sf::RenderWindow& window){
+Boomy::Boomy(float playerPosX, float playerPosY, sf::RenderWindow& window){
 	speed = 0.9f;
 	m_active = true;
 	m_isPew = true;
@@ -25,7 +25,7 @@ Pew::Pew(float playerPosX, float playerPosY, sf::RenderWindow& window){
 	sprite.setTexture(pewShotTex);
 }
 
-void Pew::Update(float elapsedTime){
+void Boomy::Update(float elapsedTime){
 	if (m_active){
 		float x = sprite.getPosition().x;
 		float y = sprite.getPosition().y;
@@ -38,20 +38,20 @@ void Pew::Update(float elapsedTime){
 
 }
 
-void Pew::Render(sf::RenderWindow &window){
+void Boomy::Render(sf::RenderWindow &window){
 	if (m_active)
 		window.draw(sprite);
 }
 
-void Pew::SetPosition(float x, float y){
+void Boomy::SetPosition(float x, float y){
 	sprite.setPosition(x, y);
 }
 
-int Pew::getDamage(){
+int Boomy::getDamage(){
 	return 20;
 }
 
-sf::Vector2f Pew::normalize(sf::Vector2f& source){
+sf::Vector2f Boomy::normalize(sf::Vector2f& source){
 	float length = sqrt((source.x * source.x) + (source.y * source.y));
 	if (length != 0.0f){
 		return sf::Vector2f(source.x / length, source.y / length);
@@ -60,6 +60,6 @@ sf::Vector2f Pew::normalize(sf::Vector2f& source){
 		return source;
 }
 //sets the entity active or inactive
-void Pew::setActiveBool(bool active){
+void Boomy::setActiveBool(bool active){
 	m_active = active;
 }

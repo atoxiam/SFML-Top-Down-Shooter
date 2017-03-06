@@ -152,7 +152,7 @@ void Settings::changeState(Game& game){
 			game.ChangeState(Game::gameStates::SOUNDSET);
 
 		else if (m_selection == 2)//graphics
-			game.ChangeState(Game::gameStates::GRAPHICSET);
+			game.ChangeState(Game::gameStates::graphics);
 
 		else//back
 			game.ChangeState(Game::gameStates::MAINMENU);

@@ -12,7 +12,7 @@
 #include "Highscore.h"
 #include "SoundSet.h"
 #include "DiffSet.h"
-#include "GraphicSet.h"
+#include "graphics.h"
 #include "CoopSet.h"
 
 #endif

@@ -58,7 +58,7 @@ void Game::Run(){
 void Game::ChangeState(gameStates newState){
 	switch (newState){
 	case gameStates::MAINMENU:
-		CurrentState = std::move(std::unique_ptr<MainMenuState>(new MainMenuState));
+		CurrentState = std::move(std::unique_ptr<MenuState>(new MenuState));
 		menMusic.PlayMusic("menu");
 		ingMusic.Pause();
 		break;
@@ -84,8 +84,8 @@ void Game::ChangeState(gameStates newState){
 	case gameStates::DIFFSET:
 		CurrentState = std::move(std::unique_ptr<DiffSet>(new DiffSet));
 		break;
-	case gameStates::GRAPHICSET:
-		CurrentState = std::move(std::unique_ptr<GraphicSet>(new GraphicSet));
+	case gameStates::graphics:
+		CurrentState = std::move(std::unique_ptr<graphics>(new graphics));
 		break;
 	case gameStates::SOUNDSET:
 		CurrentState = std::move(std::unique_ptr<SoundSet>(new SoundSet));

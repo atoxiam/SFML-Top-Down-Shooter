@@ -12,11 +12,11 @@ void IngameSound::LoadSoundBuffer(){
 	playerCollisionBuffer.loadFromFile("audio//playerCollision.ogg");
 	playerDeathBuffer.loadFromFile("audio//playerDeath.ogg");
 	monkeyFartBuffer.loadFromFile("audio//fart.ogg");
-	pewBuffer.loadFromFile("audio//pew.wav");
-	boss1HitBuffer.loadFromFile("audio//boss1hit.ogg");
+	boomyBuffer.loadFromFile("audio//boomy.wav");
+	bossy1HitBuffer.loadFromFile("audio//bossy1hit.ogg");
 	camelBuffer.loadFromFile("audio//camel.wav");
-	boss3spawn.loadFromFile("audio//boss3spawn.ogg");
-	boss3death.loadFromFile("audio//boss3death.wav");
+	bossy3spawn.loadFromFile("audio//bossy3spawn.ogg");
+	bossy3death.loadFromFile("audio//bossy3death.wav");
 }
 
 void IngameSound::setBuffer(int &volume){
@@ -34,16 +34,16 @@ void IngameSound::setBuffer(int &volume){
 		playerDeathSound.setVolume(volume);
 	monkeyFartSound.setBuffer(monkeyFartBuffer);
 		monkeyFartSound.setVolume(volume);
-	pewSound.setBuffer(pewBuffer);
+	pewSound.setBuffer(boomyBuffer);
 		pewSound.setVolume(volume);
-	boss1HitSound.setBuffer(boss1HitBuffer);
-		boss1HitSound.setVolume(volume);
+	bossy1HitSound.setBuffer(bossy1HitBuffer);
+		bossy1HitSound.setVolume(volume);
 	camelSound.setBuffer(camelBuffer);
 		camelSound.setVolume(volume);
-	boss3spawnSound.setBuffer(boss3spawn);
-		boss3spawnSound.setVolume(volume);
-	boss3deathSound.setBuffer(boss3death);
-		boss3deathSound.setVolume(volume);
+	bossy3spawnSound.setBuffer(bossy3spawn);
+		bossy3spawnSound.setVolume(volume);
+	bossy3deathSound.setBuffer(bossy3death);
+		bossy3deathSound.setVolume(volume);
 }
 
 void IngameSound::PlaySound(std::string sound){
@@ -71,15 +71,15 @@ void IngameSound::PlaySound(std::string sound){
 	else if (sound == "pew")
 		pewSound.play();
 	
-	else if (sound == "boss1Hit")
-		boss1HitSound.play();
+	else if (sound == "bossy1Hit")
+		bossy1HitSound.play();
 	
 	else if (sound == "camel")
 		camelSound.play();
 	
-	else if (sound == "boss3spawn")
-		boss3spawnSound.play();
+	else if (sound == "bossy3spawn")
+		bossy3spawnSound.play();
 	
 	else
-		boss3deathSound.play();
+		bossy3deathSound.play();
 }

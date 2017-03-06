@@ -36,3 +36,4 @@ Points 1655,Enemy Missed 210,Enemy Killed 307,Monkey Killed 5,Shots Fired 1691,S
 Points 1030,Enemy Missed 44,Enemy Killed 91,Monkey Killed 1,Shots Fired 414,Shots Got 223
 Points 575,Enemy Missed 32,Enemy Killed 50,Monkey Killed 0,Shots Fired 261,Shots Got 121
 Points 390,Enemy Missed 31,Enemy Killed 28,Monkey Killed 0,Shots Fired 222,Shots Got 76
+Points 1145,Enemy Missed 66,Enemy Killed 97,Monkey Killed 2,Shots Fired 526,Shots Got 243

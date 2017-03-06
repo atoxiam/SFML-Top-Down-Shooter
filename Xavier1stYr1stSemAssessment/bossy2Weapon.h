@@ -1,16 +1,16 @@
 
 
-#ifndef BOSS2WEAPON_H
-#define BOSS2WEAPON_H
+#ifndef bossy2WEAPON_H
+#define bossy2WEAPON_H
 
 #include <SFML/Graphics.hpp>
 #include "Player.h"
 #include "Player2.h"
 #include "IOstuff.h"
 
-class Boss2Weapon{
+class bossy2Weapon{
 public:
-	Boss2Weapon();
+	bossy2Weapon();
 	void Update(sf::RenderWindow &window, float &elapsedTime, Player &pPlayer);
 	void Render(sf::RenderWindow &window);
 	

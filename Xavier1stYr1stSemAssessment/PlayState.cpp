@@ -21,7 +21,7 @@ PlayState::PlayState(){
 	playerHealth = player1.getHealth();
 
 	//unlock pew
-	boss1Dead = false;
+	bossy1Dead = false;
 	gotPew = false;
 	pewOnCooldown = false;
 }
@@ -116,30 +116,30 @@ void PlayState::ClearStuff(){
 	//restart counters
 	enemyTimeCount = 0;
 	bulletTimeCount = 0;
-	shitCount = 0;
-	boss1WeaponCount = 0;
-	boss2WeaponCount = 0;
+	yesCount = 0;
+	bossy1WeaponCount = 0;
+	bossy2WeaponCount = 0;
 	healthDropCount = 0;
 	camelTimeCount = 0;
 	damageChill = 0;
 	enemyFormationCount = 0;
-	boss3FirstWeaponCount1 = 0;
-	boss3FirstWeaponCount2 = 0;
-	boss3SecWeaponCount = 0;
+	bossy3FirstWeaponCount1 = 0;
+	bossy3FirstWeaponCount2 = 0;
+	bossy3SecWeaponCount = 0;
 
 	//clear vectors
 	healthv.clear();
 	enemyv.clear();
 	monkeyv.clear();
-	shitv.clear();
-	boss1v.clear();
+	yesv.clear();
+	bossy1v.clear();
 	camelv.clear();
-	boss2v.clear();
-	boss2Weaponv.clear();
+	bossy2v.clear();
+	bossy2Weaponv.clear();
 	enemyFormationv.clear();
-	boss3v.clear();
-	boss3FWeaponv.clear();
-	boss3SWeaponv.clear();
+	bossy3v.clear();
+	bossy3FWeaponv.clear();
+	bossy3SWeaponv.clear();
 }
 void PlayState::StartPause(){
 	paused = true;
@@ -151,16 +151,16 @@ void PlayState::IncrementCounters(){
 	elapsedTime = (float)pClock.restart().asMilliseconds();
 	enemyTimeCount += (int)elapsedTime;
 	bulletTimeCount += (int)elapsedTime;
-	shitCount += (int)elapsedTime;
-	boss1WeaponCount += (int)elapsedTime;
-	boss2WeaponCount += (int)elapsedTime;
+	yesCount += (int)elapsedTime;
+	bossy1WeaponCount += (int)elapsedTime;
+	bossy2WeaponCount += (int)elapsedTime;
 	healthDropCount += (int)elapsedTime;
 	camelTimeCount += (int)elapsedTime;
 	damageChill += (int)elapsedTime;
 	enemyFormationCount += (int)elapsedTime;
-	boss3FirstWeaponCount1 += (int)elapsedTime;
-	boss3FirstWeaponCount2 += (int)elapsedTime;
-	boss3SecWeaponCount += (int)elapsedTime;
+	bossy3FirstWeaponCount1 += (int)elapsedTime;
+	bossy3FirstWeaponCount2 += (int)elapsedTime;
+	bossy3SecWeaponCount += (int)elapsedTime;
 }
 void PlayState::HandleSpawns(Game &game){
 	//initialize counts & background movement
@@ -168,24 +168,24 @@ void PlayState::HandleSpawns(Game &game){
 	bg.Update(game.window, elapsedTime, bgSpeed);
 
 	//spawns
-	if (boss3v.size() == 0){
+	if (bossy3v.size() == 0){
 		spawnManager.EnemySpawn(enemyTimeCount, enemyv, enemyFormationv, randomX);		//enemy
-		spawnManager.EnemyFormationSpawn(enemyFormationCount, enemyFormationv, boss2v);//enemyFormation
-		spawnManager.doggoSpawn(points, monkeyv, boss2v);							//monkey
-		spawnManager.ShitSpawn(shitCount, monkeyv, shitv, sound);						//shit
-		spawnManager.Boss1Spawn(points, boss1v);										//boss1
-		spawnManager.UnlockPewSpawn(boss1Dead, unlockPewv);								//unlockpew
-		spawnManager.Boss1WeaponSpawn(boss1WeaponCount, b1Weaponv, boss1v, sound);		//b1Weapon
-		spawnManager.Boss2Spawn(boss2v, points);										//boss2
-		spawnManager.Boss2WeaponSpawn(boss2WeaponCount, boss2Weaponv, boss2v);			//b2Weapon
-		spawnManager.Boss3Spawn(boss3v, points, sound);									//boss3
+		spawnManager.EnemyFormationSpawn(enemyFormationCount, enemyFormationv, bossy2v);//enemyFormation
+		spawnManager.doggoSpawn(points, monkeyv, bossy2v);							//monkey
+		spawnManager.yesSpawn(yesCount, monkeyv, yesv, sound);						//yes
+		spawnManager.bossy1Spawn(points, bossy1v);										//bossy1
+		spawnManager.UnlockBoomySpawn(bossy1Dead, UnlockBoomyv);								//UnlockBoomy
+		spawnManager.bossy1WeaponSpawn(bossy1WeaponCount, b1Weaponv, bossy1v, sound);		//b1Weapon
+		spawnManager.bossy2Spawn(bossy2v, points);										//bossy2
+		spawnManager.bossy2WeaponSpawn(bossy2WeaponCount, bossy2Weaponv, bossy2v);			//b2Weapon
+		spawnManager.bossy3Spawn(bossy3v, points, sound);									//bossy3
 
-		if (!boss3dead)
+		if (!bossy3dead)
 			spawnManager.camelSpawn(camelTimeCount, camelv, randomX, sound);//camel
 	}
 	spawnManager.HealthDropSpawn(healthDropCount, healthv, randomX);//health
-	spawnManager.Boss3FirstWeaponSpawn(boss3FirstWeaponCount1, boss3FirstWeaponCount2, boss3FWeaponv, boss3v, sound);
-	spawnManager.Boss3SecWeaponSpawn(boss3SecWeaponCount, boss3SWeaponv, boss3v, sound);
+	spawnManager.bossy3FirstWeaponSpawn(bossy3FirstWeaponCount1, bossy3FirstWeaponCount2, bossy3FWeaponv, bossy3v, sound);
+	spawnManager.bossy3SecWeaponSpawn(bossy3SecWeaponCount, bossy3SWeaponv, bossy3v, sound);
 
 	pewCD.Update(pewOnCooldown, elapsedTime);//pewCooldown
 
@@ -203,17 +203,17 @@ void PlayState::HandleUpdates(Game &game){
 	UpdateManager::EnemyUpdate(enemyv, game.window, elapsedTime, game.highscore);				//enemy
 	UpdateManager::StdUpdate(enemyFormationv, game.window, elapsedTime);						//enemyFormation
 	UpdateManager::StdUpdate(monkeyv, game.window, elapsedTime);								//monkey
-	UpdateManager::StdUpdate(shitv, game.window, elapsedTime);									//shit
-	UpdateManager::StdUpdate(boss1v, game.window, elapsedTime);									//boss1
-	UpdateManager::StdUpdate(unlockPewv, game.window, elapsedTime);								//unlockpew
+	UpdateManager::StdUpdate(yesv, game.window, elapsedTime);									//yes
+	UpdateManager::StdUpdate(bossy1v, game.window, elapsedTime);									//bossy1
+	UpdateManager::StdUpdate(UnlockBoomyv, game.window, elapsedTime);								//UnlockBoomy
 	UpdateManager::StdUpdate(b1Weaponv, game.window, elapsedTime);								//b1Weapon
-	UpdateManager::StdUpdate(boss2v, game.window, elapsedTime);									//boss2
-	UpdateManager::Boss2WeaponUpdate(boss2Weaponv, game.window, elapsedTime, player1);			// b2Weapon
-	UpdateManager::StdUpdate(boss3v, game.window, elapsedTime);									//boss3
+	UpdateManager::StdUpdate(bossy2v, game.window, elapsedTime);									//bossy2
+	UpdateManager::bossy2WeaponUpdate(bossy2Weaponv, game.window, elapsedTime, player1);			// b2Weapon
+	UpdateManager::StdUpdate(bossy3v, game.window, elapsedTime);									//bossy3
 	UpdateManager::StdUpdate(camelv, game.window, elapsedTime);									//camel
 	UpdateManager::StdUpdate(healthv, game.window, elapsedTime);								//health
-	UpdateManager::StdUpdate(boss3FWeaponv, game.window, elapsedTime);							//boss3firstWeapon
-	UpdateManager::StdUpdate(boss3SWeaponv, game.window, elapsedTime);							//boss3SecWeapon
+	UpdateManager::StdUpdate(bossy3FWeaponv, game.window, elapsedTime);							//bossy3firstWeapon
+	UpdateManager::StdUpdate(bossy3SWeaponv, game.window, elapsedTime);							//bossy3SecWeapon
 																								
 	UpdateManager::WeaponUpdate(bulletv, elapsedTime);								//bullet
 	UpdateManager::WeaponUpdate(dShotv, elapsedTime);								//double shot
@@ -230,23 +230,23 @@ void PlayState::HandleDraws(Game &game){
 		player1.Render(game.window);
 
 	Rm::StdDraw(healthv, game.window);//health
-	Rm::StdDraw(unlockPewv, game.window);//unlockPew
+	Rm::StdDraw(UnlockBoomyv, game.window);//UnlockBoomy
 
 	Rm::StdDraw(enemyv, game.window);//Enemy
-	Rm::StdDraw(shitv, game.window);//shit
+	Rm::StdDraw(yesv, game.window);//yes
 	Rm::StdDraw(monkeyv, game.window);//monkey
 
 	Rm::StdDraw(enemyFormationv, game.window);//enemyFormation
 	Rm::StdDraw(camelv, game.window);//camel
 
 	Rm::StdDraw(b1Weaponv, game.window);//b1Weapon
-	Rm::StdDraw(boss1v, game.window);//boss1
-	Rm::StdDraw(boss2Weaponv, game.window);//b2Weapon
-	Rm::StdDraw(boss2v, game.window);//boss2
+	Rm::StdDraw(bossy1v, game.window);//bossy1
+	Rm::StdDraw(bossy2Weaponv, game.window);//b2Weapon
+	Rm::StdDraw(bossy2v, game.window);//bossy2
 
-	Rm::StdDraw(boss3FWeaponv, game.window);//boss3FirstWeapon
-	Rm::StdDraw(boss3SWeaponv, game.window);//boss3SecWeapon
-	Rm::StdDraw(boss3v, game.window);//boss3
+	Rm::StdDraw(bossy3FWeaponv, game.window);//bossy3FirstWeapon
+	Rm::StdDraw(bossy3SWeaponv, game.window);//bossy3SecWeapon
+	Rm::StdDraw(bossy3v, game.window);//bossy3
 
 	Rm::StdDraw(bulletv, game.window);//bullet
 	Rm::StdDraw(dShotv, game.window);//doubleShot
@@ -254,28 +254,28 @@ void PlayState::HandleDraws(Game &game){
 }
 
 void PlayState::HandleCollisions(Game &game){
-	CollisionManager::WeaponToEnemy(bulletv, points, sound, game.highscore, enemyv, monkeyv, shitv, boss1v, boss1Dead, boss2Weaponv, enemyFormationv, boss3v, boss3FWeaponv, boss3SWeaponv, boss3dead, game.window);//bullet
-	CollisionManager::WeaponToEnemy(dShotv, points, sound, game.highscore, enemyv, monkeyv, shitv, boss1v, boss1Dead, boss2Weaponv, enemyFormationv, boss3v, boss3FWeaponv, boss3SWeaponv, boss3dead, game.window);//doubleShot
-	CollisionManager::PewToEnemy(pewv, points, sound, game.highscore, enemyv, monkeyv, shitv, boss1v, boss2v, boss2Weaponv, enemyFormationv, boss3v, boss3FWeaponv, boss3SWeaponv, boss3dead, game.window);//Pew
+	CollisionManager::WeaponToEnemy(bulletv, points, sound, game.highscore, enemyv, monkeyv, yesv, bossy1v, bossy1Dead, bossy2Weaponv, enemyFormationv, bossy3v, bossy3FWeaponv, bossy3SWeaponv, bossy3dead, game.window);//bullet
+	CollisionManager::WeaponToEnemy(dShotv, points, sound, game.highscore, enemyv, monkeyv, yesv, bossy1v, bossy1Dead, bossy2Weaponv, enemyFormationv, bossy3v, bossy3FWeaponv, bossy3SWeaponv, bossy3dead, game.window);//doubleShot
+	CollisionManager::PewToEnemy(pewv, points, sound, game.highscore, enemyv, monkeyv, yesv, bossy1v, bossy2v, bossy2Weaponv, enemyFormationv, bossy3v, bossy3FWeaponv, bossy3SWeaponv, bossy3dead, game.window);//Pew
 	if (player1.getActiveBool())	{
 		//player collision
 		coll::PlayerEnemyInactive(enemyv, player1, sound);//enemy
-		coll::PlayerEnemyInactive(shitv, player1, sound);//shit
+		coll::PlayerEnemyInactive(yesv, player1, sound);//yes
 		coll::PlayerEnemyInactive(b1Weaponv, player1, sound);//b1Weapon
-		coll::PlayerEnemyInactive(boss2Weaponv, player1, sound);//b2Weapon
+		coll::PlayerEnemyInactive(bossy2Weaponv, player1, sound);//b2Weapon
 		coll::PlayerEnemyInactive(enemyFormationv, player1, sound);//enemyFormation
-		coll::PlayerEnemyInactive(boss3FWeaponv, player1, sound);//boss3firstWeapon
-		coll::PlayerEnemyInactive(boss3SWeaponv, player1, sound);//boss3secWeapon
+		coll::PlayerEnemyInactive(bossy3FWeaponv, player1, sound);//bossy3firstWeapon
+		coll::PlayerEnemyInactive(bossy3SWeaponv, player1, sound);//bossy3secWeapon
 		coll::PlayerHealthGet(healthv, player1, sound);//health
-		coll::PlayerUnlockPew(unlockPewv, player1, sound, gotPew, pewOnCooldown);//unlockPew
+		coll::PlayerUnlockBoomy(UnlockBoomyv, player1, sound, gotPew, pewOnCooldown);//UnlockBoomy
 
 		//for enemies that are not set inactive there is a damagechill.. otherwise player would instantly die
 		if (damageChill > 500){
 			coll::PlayerEnemyActive(camelv, player1, sound);//camel
 			coll::PlayerEnemyActive(monkeyv, player1, sound);//monkey
-			coll::PlayerEnemyActive(boss1v, player1, sound);//boss1
-			coll::PlayerEnemyActive(boss2v, player1, sound);//boss2
-			coll::PlayerEnemyActive(boss3v, player1, sound);//boss3
+			coll::PlayerEnemyActive(bossy1v, player1, sound);//bossy1
+			coll::PlayerEnemyActive(bossy2v, player1, sound);//bossy2
+			coll::PlayerEnemyActive(bossy3v, player1, sound);//bossy3
 			damageChill = 0;
 		}
 	}
@@ -285,17 +285,17 @@ void PlayState::CountersToNull(){
 	bulletTimeCount = 0;
 	enemyTimeCount = 0;
 	enemyFormationCount = 0;
-	shitCount = 0;
+	yesCount = 0;
 	healthDropCount = 0;
 	camelTimeCount = 0;
 	randomX = 0;
 	showLvUp = 0;
 	damageChill = 0;
-	boss1WeaponCount = 0;
-	boss2WeaponCount = 0;
-	boss3FirstWeaponCount1 = 0;
-	boss3FirstWeaponCount2 = 0;
-	boss3SecWeaponCount = 0;
+	bossy1WeaponCount = 0;
+	bossy2WeaponCount = 0;
+	bossy3FirstWeaponCount1 = 0;
+	bossy3FirstWeaponCount2 = 0;
+	bossy3SecWeaponCount = 0;
 }
 
 void PlayState::UpdateHUD(sf::RenderWindow &window){
