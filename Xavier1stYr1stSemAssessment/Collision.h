@@ -32,8 +32,8 @@ namespace coll{
 		}
 	}
 	template <class Object, class ObjectList>
-	void ProjectileToMonkey(Object &obj, std::vector<ObjectList> &objList, int &points, IngameSound &sound, HighscoreManager &highscore){
-		//collision detection for monkey (got a seperate to count monkey kills)
+	void ProjectileTodoggo(Object &obj, std::vector<ObjectList> &objList, int &points, IngameSound &sound, HighscoreManager &highscore){
+		//collision detection for doggo (got a seperate to count doggo kills)
 		for (unsigned int i = 0; i < objList.size(); i++){
 			if (objList[i].getActiveBool()){
 				if (obj->sprite.getGlobalBounds().intersects(objList[i].sprite.getGlobalBounds())){
@@ -47,7 +47,7 @@ namespace coll{
 						sound.PlaySound("bossDeath");
 						objList[i].setDie(true);
 						points += 20;
-						highscore.setMonkeyKilled(1);
+						highscore.setdoggoKilled(1);
 					}
 				}
 			}

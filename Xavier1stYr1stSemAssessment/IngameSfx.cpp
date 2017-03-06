@@ -11,7 +11,7 @@ void IngameSound::LoadSoundBuffer(){
 	healthDropBuffer.loadFromFile("audio//healthDrop.ogg");
 	playerCollisionBuffer.loadFromFile("audio//playerCollision.ogg");
 	playerDeathBuffer.loadFromFile("audio//playerDeath.ogg");
-	monkeyFartBuffer.loadFromFile("audio//fart.ogg");
+	doggobarkBuffer.loadFromFile("audio//bark.ogg");
 	boomyBuffer.loadFromFile("audio//boomy.wav");
 	bossy1HitBuffer.loadFromFile("audio//bossy1hit.ogg");
 	camelBuffer.loadFromFile("audio//camel.wav");
@@ -32,8 +32,8 @@ void IngameSound::setBuffer(int &volume){
 		playerCollisionSound.setVolume(volume);
 	playerDeathSound.setBuffer(playerDeathBuffer);
 		playerDeathSound.setVolume(volume);
-	monkeyFartSound.setBuffer(monkeyFartBuffer);
-		monkeyFartSound.setVolume(volume);
+	doggobarkSound.setBuffer(doggobarkBuffer);
+		doggobarkSound.setVolume(volume);
 	pewSound.setBuffer(boomyBuffer);
 		pewSound.setVolume(volume);
 	bossy1HitSound.setBuffer(bossy1HitBuffer);
@@ -50,8 +50,8 @@ void IngameSound::PlaySound(std::string sound){
 	if (sound == "bulletShot")
 		bulletShotSound.play();
 	
-	else if (sound == "fart")
-		monkeyFartSound.play();
+	else if (sound == "bark")
+		doggobarkSound.play();
 	
 	else if (sound == "enemyCollision")
 		enemyCollisionSound.play();

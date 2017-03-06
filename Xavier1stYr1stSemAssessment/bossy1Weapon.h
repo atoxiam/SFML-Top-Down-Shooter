@@ -5,7 +5,7 @@
 
 
 #include <SFML/Graphics.hpp>
-#include "IOstuff.h"
+#include "IO.h"
 
 class bossy1Weapon{
 public:

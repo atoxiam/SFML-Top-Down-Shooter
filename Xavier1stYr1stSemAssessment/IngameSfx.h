@@ -21,7 +21,7 @@ private:
 	sf::SoundBuffer healthDropBuffer;
 	sf::SoundBuffer playerCollisionBuffer;
 	sf::SoundBuffer playerDeathBuffer;
-	sf::SoundBuffer monkeyFartBuffer;
+	sf::SoundBuffer doggobarkBuffer;
 	sf::SoundBuffer boomyBuffer;
 	sf::SoundBuffer bossy1HitBuffer;
 	sf::SoundBuffer camelBuffer;
@@ -34,7 +34,7 @@ private:
 	sf::Sound healthDropSound;
 	sf::Sound playerCollisionSound;
 	sf::Sound playerDeathSound;
-	sf::Sound monkeyFartSound;
+	sf::Sound doggobarkSound;
 	sf::Sound pewSound;
 	sf::Sound bossy1HitSound;
 	sf::Sound camelSound;

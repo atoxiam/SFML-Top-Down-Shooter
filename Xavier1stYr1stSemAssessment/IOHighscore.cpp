@@ -22,14 +22,14 @@ void IOHighscore::WriteHighscore(HighscoreManager &highscore)
 	int mPoints = highscore.getPoints();
 	int meMissed = highscore.getEnemyMissed();
 	int meKilled = highscore.getEnemyKilled();
-	int mmKilled = highscore.getMonkeyKilled();
+	int mmKilled = highscore.getdoggoKilled();
 	int msFired = highscore.getShotsFired();
 	int msGotS = highscore.getShotsGot();
 
 	IOHighscore::openWrite();
 
 	IOHighscore::writeInFile << "Points " << mPoints << "," << "Enemy Missed " << meMissed << "," << "Enemy Killed " << meKilled << ","
-		<< "Monkey Killed " << mmKilled << "," << "Shots Fired " << msFired << "," << "Shots Got " << msGotS << "\n";
+		<< "doggo Killed " << mmKilled << "," << "Shots Fired " << msFired << "," << "Shots Got " << msGotS << "\n";
 	IOHighscore::closeWrite();
 }
 

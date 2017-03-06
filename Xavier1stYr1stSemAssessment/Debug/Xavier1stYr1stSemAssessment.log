@@ -1,2 +1,49 @@
-﻿  Xavier1stYr1stSemAssessment.vcxproj -> F:\Xavier1stYr1stSemAssessment\Debug\Xavier1stYr1stSemAssessment.exe
+﻿  SpawnManager.cpp
+  IngameSfx.cpp
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\ingamesfx.cpp(24): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\ingamesfx.cpp(26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\ingamesfx.cpp(28): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\ingamesfx.cpp(30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\ingamesfx.cpp(32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\ingamesfx.cpp(34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\ingamesfx.cpp(36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\ingamesfx.cpp(38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\ingamesfx.cpp(40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\ingamesfx.cpp(42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\ingamesfx.cpp(44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+f:\xavier1styr1stsemassessment\xavier1styr1stsemassessment\ingamesfx.cpp(46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+  Compiling...
+  PlayState.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  main.cpp
+  SplashState.cpp
+  SoundSet.cpp
+  Settings.cpp
+  MenuState.cpp
+  Intro.cpp
+  HighscoreList.cpp
+  Highscore.cpp
+  Graphics.cpp
+  Game.cpp
+  DiffSet.cpp
+  Basics.cpp
+LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/FORCE' specification
+Basics.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+IO.obj : warning LNK4006: "public: int __thiscall IOdiff::ReadDiffSettings(void)" (?ReadDiffSettings@IOdiff@@QAEHXZ) already defined in IOdiff.obj; second definition ignored
+IO.obj : warning LNK4006: "public: bool __thiscall IOsmooth::ReadSmoothSettings(void)" (?ReadSmoothSettings@IOsmooth@@QAE_NXZ) already defined in IOsmooth.obj; second definition ignored
+IO.obj : warning LNK4006: "public: void __thiscall IOsound::ReadSoundSettings(int &)" (?ReadSoundSettings@IOsound@@QAEXAAH@Z) already defined in IOsound.obj; second definition ignored
+IO.obj : warning LNK4006: "public: void __thiscall IOdiff::WriteDiffSettings(int &)" (?WriteDiffSettings@IOdiff@@QAEXAAH@Z) already defined in IOdiff.obj; second definition ignored
+IO.obj : warning LNK4006: "public: void __thiscall IOHighscore::WriteHighscore(class HighscoreManager &)" (?WriteHighscore@IOHighscore@@QAEXAAVHighscoreManager@@@Z) already defined in IOHighscore.obj; second definition ignored
+IO.obj : warning LNK4006: "public: void __thiscall IOsmooth::WriteSmoothSettings(bool &)" (?WriteSmoothSettings@IOsmooth@@QAEXAA_N@Z) already defined in IOsmooth.obj; second definition ignored
+IO.obj : warning LNK4006: "public: void __thiscall IOsound::WriteSoundSettings(int &)" (?WriteSoundSettings@IOsound@@QAEXAAH@Z) already defined in IOsound.obj; second definition ignored
+IO.obj : warning LNK4006: "private: void __thiscall IOHighscore::closeWrite(void)" (?closeWrite@IOHighscore@@AAEXXZ) already defined in IOHighscore.obj; second definition ignored
+IO.obj : warning LNK4006: "public: bool __thiscall IOscreen::getScreenSettings(void)" (?getScreenSettings@IOscreen@@QAE_NXZ) already defined in IOscreen.obj; second definition ignored
+IO.obj : warning LNK4006: "private: void __thiscall IOHighscore::openWrite(void)" (?openWrite@IOHighscore@@AAEXXZ) already defined in IOHighscore.obj; second definition ignored
+IO.obj : warning LNK4006: "public: void __thiscall IOscreen::setScreenSettings(bool &)" (?setScreenSettings@IOscreen@@QAEXAA_N@Z) already defined in IOscreen.obj; second definition ignored
+IOtwoPlayer.obj : warning LNK4006: "public: bool __thiscall IOtwoPlayer::ReadSettings(void)" (?ReadSettings@IOtwoPlayer@@QAE_NXZ) already defined in IO.obj; second definition ignored
+IOtwoPlayer.obj : warning LNK4006: "public: void __thiscall IOtwoPlayer::WriteSettings(bool &)" (?WriteSettings@IOtwoPlayer@@QAEXAA_N@Z) already defined in IO.obj; second definition ignored
+F:\Xavier1stYr1stSemAssessment\Debug\Xavier1stYr1stSemAssessment.exe : warning LNK4088: image being generated due to /FORCE option; image may not run
+  Xavier1stYr1stSemAssessment.vcxproj -> F:\Xavier1stYr1stSemAssessment\Debug\Xavier1stYr1stSemAssessment.exe
   Xavier1stYr1stSemAssessment.vcxproj -> F:\Xavier1stYr1stSemAssessment\Debug\Xavier1stYr1stSemAssessment.pdb (Full PDB)

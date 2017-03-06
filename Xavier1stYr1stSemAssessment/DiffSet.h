@@ -4,7 +4,7 @@
 #define DIFFSET_H
 
 #include "Game.h"
-#include "IOstuff.h"
+#include "IO.h"
 #include "MenuSfx.h"
 
 class DiffSet : public GameState{

@@ -68,9 +68,9 @@ void SpawnManager::HealthDropSpawn(int &counter, std::vector<HealthDrop> &vector
 void SpawnManager::doggoSpawn(int &points, std::vector<doggo> &vector, std::vector<bossy2> &bossV){
 	if (points > 1 && points % 300 == 0 && bossV.size() == 0)	{
 		points += 10;
-		doggo monkey;
-		monkey.SetPosition(364, 25);
-		vector.push_back(monkey);
+		doggo doggo;
+		doggo.SetPosition(364, 25);
+		vector.push_back(doggo);
 	}
 }
 
@@ -80,7 +80,7 @@ void SpawnManager::yesSpawn(int &counter, std::vector<doggo> &smVector, std::vec
 		if (smVector[i].getActiveBool() && counter >= 1500)		{
 			bullets yesx;
 			yesx.SetPosition(smVector[i].getPosition().x, smVector[i].getPosition().y);
-			sound.PlaySound("fart");
+			sound.PlaySound("bark");
 			sVector.push_back(yesx);
 			counter = 0;
 		}

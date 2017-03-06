@@ -6,7 +6,7 @@
 #include <SFML/Graphics.hpp>
 #include "Player.h"
 #include "Player2.h"
-#include "IOstuff.h"
+#include "IO.h"
 
 class bossy2Weapon{
 public:

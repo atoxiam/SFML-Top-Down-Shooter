@@ -4,7 +4,7 @@
 #define bossy1_H
 
 #include <SFML/Graphics.hpp>
-#include "IOstuff.h"
+#include "IO.h"
 
 class bossy1{
 public:

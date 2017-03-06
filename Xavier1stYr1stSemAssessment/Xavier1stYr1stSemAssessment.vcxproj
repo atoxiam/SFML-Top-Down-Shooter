@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BasicStuff.h" />
-    <ClInclude Include="BasicStuffIncludes.h" />
+    <ClInclude Include="Basics.h" />
+    <ClInclude Include="BasicsIncludes.h" />
     <ClInclude Include="bossy1.h" />
     <ClInclude Include="bossy1Weapon.h" />
     <ClInclude Include="bossy2.h" />
@@ -38,7 +38,6 @@
     <ClInclude Include="EnemyFormation.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EntityIncludes.h" />
-    <ClInclude Include="EventHandler.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Graphics.h" />
@@ -54,7 +53,7 @@
     <ClInclude Include="IOscreen.h" />
     <ClInclude Include="IOsmooth.h" />
     <ClInclude Include="IOsound.h" />
-    <ClInclude Include="IOstuff.h" />
+    <ClInclude Include="IO.h" />
     <ClInclude Include="IOtwoPlayer.h" />
     <ClInclude Include="MenuState.h" />
     <ClInclude Include="Menu.h" />
@@ -75,19 +74,19 @@
     <ClInclude Include="StateManager.h" />
     <ClInclude Include="UnlockBoomy.h" />
     <ClInclude Include="UpdateManager.h" />
-    <ClInclude Include="VectorOperation.h" />
+    <ClInclude Include="Vectors.h" />
     <ClInclude Include="WeaponManager.h" />
     <ClInclude Include="WindowStates.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BasicStuff.cpp" />
+    <ClCompile Include="Basics.cpp" />
     <ClCompile Include="bossy1.cpp" />
     <ClCompile Include="bossy1Weapon.cpp" />
     <ClCompile Include="bossy2.cpp" />
     <ClCompile Include="bossy2Weapon.cpp" />
     <ClCompile Include="bossy3.cpp" />
-    <ClCompile Include="Boss3firstWeapon.cpp" />
-    <ClCompile Include="Boss3SecWeapon.cpp" />
+    <ClCompile Include="bossy3firstWeapon.cpp" />
+    <ClCompile Include="bossy3SecWeapon.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="camel.cpp" />
@@ -110,7 +109,7 @@
     <ClCompile Include="IOscreen.cpp" />
     <ClCompile Include="IOsmooth.cpp" />
     <ClCompile Include="IOsound.cpp" />
-    <ClCompile Include="IOstuff.cpp" />
+    <ClCompile Include="IO.cpp" />
     <ClCompile Include="IOtwoPlayer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuState.cpp" />

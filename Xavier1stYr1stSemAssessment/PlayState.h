@@ -6,8 +6,8 @@
 #include "Game.h"
 #include "GameState.h"
 #include "IngameSfx.h"
-#include "IOstuff.h"
-#include "BasicStuffIncludes.h"
+#include "IO.h"
+#include "BasicsIncludes.h"
 
 #include "UpdateManager.h"
 #include "RenderManager.h"
@@ -65,7 +65,7 @@ private:
 	std::vector<DoubleShot>					dShotv;
 	std::vector<Enemy>						enemyv;
 	std::vector<EnemyFormation>				enemyFormationv;
-	std::vector<doggo>				monkeyv;
+	std::vector<doggo>				doggov;
 	std::vector<bossy1>						bossy1v;
 	std::vector<camel>						camelv;
 	std::vector<bullets>				yesv;

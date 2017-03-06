@@ -4,7 +4,7 @@
 #define __SPLASHSTATE_H__
 
 #include "Game.h"
-#include "IOstuff.h"
+#include "IO.h"
 
 class SplashState : public GameState{
 public:

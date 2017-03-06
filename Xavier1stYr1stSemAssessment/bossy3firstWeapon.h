@@ -4,7 +4,7 @@
 #define bossy3FIRSTWEAPON_H
 
 #include <SFML/Graphics.hpp>
-#include "IOstuff.h"
+#include "IO.h"
 
 class bossy3firstWeapon{
 public:

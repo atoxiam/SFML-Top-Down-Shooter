@@ -4,7 +4,7 @@
 #define graphics_H
 
 #include "Game.h"
-#include "IOstuff.h"
+#include "IO.h"
 #include "MenuSfx.h"
 
 class graphics : public GameState{

@@ -4,7 +4,7 @@
 #define doggo_H
 
 #include <SFML/Graphics.hpp>
-#include "IOstuff.h"
+#include "IO.h"
 
 class doggo{
 public:

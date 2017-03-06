@@ -15,12 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BasicStuff.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BasicStuffIncludes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Bullet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -46,9 +40,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EntityIncludes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EventHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
@@ -91,9 +82,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IOsound.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="IOstuff.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IOtwoPlayer.h">
@@ -139,9 +127,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UpdateManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="VectorOperation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="WeaponManager.h">
@@ -192,17 +177,20 @@
     <ClInclude Include="MenuState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Basics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicsIncludes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vectors.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BasicStuff.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Boss3firstWeapon.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Boss3SecWeapon.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Bullet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -261,9 +249,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="IOsound.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="IOstuff.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="IOtwoPlayer.cpp">
@@ -339,6 +324,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MenuState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Basics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bossy3firstWeapon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bossy3SecWeapon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

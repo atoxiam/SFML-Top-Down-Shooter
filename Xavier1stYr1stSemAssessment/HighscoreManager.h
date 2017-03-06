@@ -12,7 +12,7 @@ public:
 	void setPoints(int points);
 	void setEnemyMissed(int missed);
 	void setEnemyKilled(int ekilled);
-	void setMonkeyKilled(int mkilled);
+	void setdoggoKilled(int mkilled);
 	void setShotsFired(int sfired);
 	void setShotsGot(int sgot);
 
@@ -24,8 +24,8 @@ public:
 	int getEnemyMissed() const { return hMissed; };
 	//returns killed enemies
 	int getEnemyKilled() const { return hEkilled; };
-	//returns killed monkeys
-	int getMonkeyKilled() const { return hMkilled; };
+	//returns killed doggos
+	int getdoggoKilled() const { return hMkilled; };
 	//returns fired shots
 	int getShotsFired() const {	return hSfired;	};
 	//returns collided shots

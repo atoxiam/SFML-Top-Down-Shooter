@@ -8,7 +8,7 @@
 
 #include "Game.h"
 #include "HighscoreManager.h"
-#include "IOstuff.h"
+#include "IO.h"
 
 class Highscore : public GameState{
 public:

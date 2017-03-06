@@ -4,7 +4,7 @@
 #define SOUNDSET_H
 
 #include "Game.h"
-#include "IOstuff.h"
+#include "IO.h"
 #include <sstream>
 
 class SoundSet : public GameState{

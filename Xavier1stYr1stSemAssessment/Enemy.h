@@ -5,7 +5,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "HighscoreManager.h"
-#include "IOstuff.h"
+#include "IO.h"
 
 class Enemy{
 public:

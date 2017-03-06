@@ -3,7 +3,7 @@
 #define bossy3SECWEAPON_H
 
 #include <SFML/Graphics.hpp>
-#include "IOstuff.h"
+#include "IO.h"
 
 class bossy3SecWeapon{
 public:

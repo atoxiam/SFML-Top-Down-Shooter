@@ -5,7 +5,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "doggo.h"
-#include "IOstuff.h"
+#include "IO.h"
 
 class bullets{
 public:

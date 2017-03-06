@@ -130,7 +130,7 @@ void PlayState::ClearStuff(){
 	//clear vectors
 	healthv.clear();
 	enemyv.clear();
-	monkeyv.clear();
+	doggov.clear();
 	yesv.clear();
 	bossy1v.clear();
 	camelv.clear();
@@ -171,8 +171,8 @@ void PlayState::HandleSpawns(Game &game){
 	if (bossy3v.size() == 0){
 		spawnManager.EnemySpawn(enemyTimeCount, enemyv, enemyFormationv, randomX);		//enemy
 		spawnManager.EnemyFormationSpawn(enemyFormationCount, enemyFormationv, bossy2v);//enemyFormation
-		spawnManager.doggoSpawn(points, monkeyv, bossy2v);							//monkey
-		spawnManager.yesSpawn(yesCount, monkeyv, yesv, sound);						//yes
+		spawnManager.doggoSpawn(points, doggov, bossy2v);							//doggo
+		spawnManager.yesSpawn(yesCount, doggov, yesv, sound);						//yes
 		spawnManager.bossy1Spawn(points, bossy1v);										//bossy1
 		spawnManager.UnlockBoomySpawn(bossy1Dead, UnlockBoomyv);								//UnlockBoomy
 		spawnManager.bossy1WeaponSpawn(bossy1WeaponCount, b1Weaponv, bossy1v, sound);		//b1Weapon
@@ -202,7 +202,7 @@ void PlayState::HandleSpawns(Game &game){
 void PlayState::HandleUpdates(Game &game){
 	UpdateManager::EnemyUpdate(enemyv, game.window, elapsedTime, game.highscore);				//enemy
 	UpdateManager::StdUpdate(enemyFormationv, game.window, elapsedTime);						//enemyFormation
-	UpdateManager::StdUpdate(monkeyv, game.window, elapsedTime);								//monkey
+	UpdateManager::StdUpdate(doggov, game.window, elapsedTime);								//doggo
 	UpdateManager::StdUpdate(yesv, game.window, elapsedTime);									//yes
 	UpdateManager::StdUpdate(bossy1v, game.window, elapsedTime);									//bossy1
 	UpdateManager::StdUpdate(UnlockBoomyv, game.window, elapsedTime);								//UnlockBoomy
@@ -234,7 +234,7 @@ void PlayState::HandleDraws(Game &game){
 
 	Rm::StdDraw(enemyv, game.window);//Enemy
 	Rm::StdDraw(yesv, game.window);//yes
-	Rm::StdDraw(monkeyv, game.window);//monkey
+	Rm::StdDraw(doggov, game.window);//doggo
 
 	Rm::StdDraw(enemyFormationv, game.window);//enemyFormation
 	Rm::StdDraw(camelv, game.window);//camel
@@ -254,9 +254,9 @@ void PlayState::HandleDraws(Game &game){
 }
 
 void PlayState::HandleCollisions(Game &game){
-	CollisionManager::WeaponToEnemy(bulletv, points, sound, game.highscore, enemyv, monkeyv, yesv, bossy1v, bossy1Dead, bossy2Weaponv, enemyFormationv, bossy3v, bossy3FWeaponv, bossy3SWeaponv, bossy3dead, game.window);//bullet
-	CollisionManager::WeaponToEnemy(dShotv, points, sound, game.highscore, enemyv, monkeyv, yesv, bossy1v, bossy1Dead, bossy2Weaponv, enemyFormationv, bossy3v, bossy3FWeaponv, bossy3SWeaponv, bossy3dead, game.window);//doubleShot
-	CollisionManager::PewToEnemy(pewv, points, sound, game.highscore, enemyv, monkeyv, yesv, bossy1v, bossy2v, bossy2Weaponv, enemyFormationv, bossy3v, bossy3FWeaponv, bossy3SWeaponv, bossy3dead, game.window);//Pew
+	CollisionManager::WeaponToEnemy(bulletv, points, sound, game.highscore, enemyv, doggov, yesv, bossy1v, bossy1Dead, bossy2Weaponv, enemyFormationv, bossy3v, bossy3FWeaponv, bossy3SWeaponv, bossy3dead, game.window);//bullet
+	CollisionManager::WeaponToEnemy(dShotv, points, sound, game.highscore, enemyv, doggov, yesv, bossy1v, bossy1Dead, bossy2Weaponv, enemyFormationv, bossy3v, bossy3FWeaponv, bossy3SWeaponv, bossy3dead, game.window);//doubleShot
+	CollisionManager::PewToEnemy(pewv, points, sound, game.highscore, enemyv, doggov, yesv, bossy1v, bossy2v, bossy2Weaponv, enemyFormationv, bossy3v, bossy3FWeaponv, bossy3SWeaponv, bossy3dead, game.window);//Pew
 	if (player1.getActiveBool())	{
 		//player collision
 		coll::PlayerEnemyInactive(enemyv, player1, sound);//enemy
@@ -272,7 +272,7 @@ void PlayState::HandleCollisions(Game &game){
 		//for enemies that are not set inactive there is a damagechill.. otherwise player would instantly die
 		if (damageChill > 500){
 			coll::PlayerEnemyActive(camelv, player1, sound);//camel
-			coll::PlayerEnemyActive(monkeyv, player1, sound);//monkey
+			coll::PlayerEnemyActive(doggov, player1, sound);//doggo
 			coll::PlayerEnemyActive(bossy1v, player1, sound);//bossy1
 			coll::PlayerEnemyActive(bossy2v, player1, sound);//bossy2
 			coll::PlayerEnemyActive(bossy3v, player1, sound);//bossy3

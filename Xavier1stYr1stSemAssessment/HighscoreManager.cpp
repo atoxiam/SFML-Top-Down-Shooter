@@ -28,8 +28,8 @@ void HighscoreManager::setEnemyKilled(int ekilled){//collision
 	hEkilled += ekilled;
 }
 
-//sets the Monkeys the player killed to the highscore
-void HighscoreManager::setMonkeyKilled(int mkilled){//collision
+//sets the doggos the player killed to the highscore
+void HighscoreManager::setdoggoKilled(int mkilled){//collision
 	hMkilled += mkilled;
 }
 

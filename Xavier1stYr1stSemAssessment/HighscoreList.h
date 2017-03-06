@@ -6,7 +6,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "Game.h"
-#include "IOstuff.h"
+#include "IO.h"
 
 class HighscoreList : public GameState{
 public:

@@ -57,7 +57,7 @@ void Highscore::Update(Game &game){
 	pointText.Update(pointsStream, mng.getPoints());
 	eMissedText.Update(eMissedStream, mng.getEnemyMissed());
 	eKilledText.Update(eKilledStream, mng.getEnemyKilled());
-	mKilledText.Update(mKilledStream, mng.getMonkeyKilled());
+	mKilledText.Update(mKilledStream, mng.getdoggoKilled());
 	sFiredText.Update(sFiredStream, mng.getShotsFired());
 	sGotText.Update(sGotStream, mng.getShotsGot());
 }
